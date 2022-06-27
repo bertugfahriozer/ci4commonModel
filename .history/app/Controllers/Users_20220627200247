@@ -1,0 +1,19 @@
+<?php namespace App\Controllers;
+
+use App\Controllers\BaseController;
+use App\Libraries\CommonLibrary;
+use App\Models\CommonModel;
+
+class Users extends BaseController
+{
+    public function simpleOwnUpdate()
+    {
+        $cModel=new CommonModel();
+        $result=$cModel->selectOne('users',[]);
+        $lib=new CommonLibrary();
+        if(!empty($result->password)) {
+            $updatedPass = $lib->setPassword($result, '123456');
+        }
+        return var_dump($cModel->edit('users',$updatedPass,['id'=>1]));
+    }
+}
