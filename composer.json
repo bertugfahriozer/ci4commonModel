@@ -1,5 +1,5 @@
 {
-  "name": "bertugfahriozer/ci4commonModel",
+  "name": "bertugfahriozer/ci4commonmodel",
   "description": "With the codeigniter 4 database builder, I combined the general methods I used for myself into a single model.",
   "type": "library",
   "minimum-stability": "dev",
@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "ci4commonModel": "app/"
+      "ci4commonmodel": "app/"
     }
   },
   "support": {
