@@ -1,6 +1,4 @@
-<?php namespace App\Models;
-
-use CodeIgniter\Model;
+<?php namespace ci4commonmodel\Models;
 
 class CommonModel
 {
