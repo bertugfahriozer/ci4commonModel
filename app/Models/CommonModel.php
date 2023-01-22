@@ -9,10 +9,10 @@ class CommonModel
         $this->db = \Config\Database::connect($group);
     }
 
-    public function lists(string $table, string $select = '*', array $where = [])
+    public function lists(string $table, string $select = '*', array $where = [], $order = 'id ASC')
     {
         $builder = $this->db->table($table);
-        return $builder->select($select)->where($where)->get()->getResult();
+        return $builder->select($select)->where($where)->orderBy($order)->get()->getResult();
     }
 
     public function create(string $table, array $data = [])
@@ -20,6 +20,12 @@ class CommonModel
         $builder = $this->db->table($table);
         $builder->insert($data);
         return $builder->insertID();
+    }
+
+    public function createMany(string $table, array $data)
+    {
+        $builder = $this->db->table($table);
+        return $builder->insertBatch($data);
     }
 
     public function edit(string $table, array $data = [], array $where = [])
@@ -40,14 +46,14 @@ class CommonModel
         return $builder->select($select)->where($where)->get()->getRow();
     }
 
-    public function whereInCheckData($att, array $where = [], string $table)
+    public function whereInCheckData(string $att, string $table, array $where = [])
     {
         $builder = $this->db->table($table);
         return $builder->whereIn($att, $where, 1)->get()->getNumRows();
 
     }
 
-    public function isHave(string $table, $where)
+    public function isHave(string $table, array $where)
     {
         $builder = $this->db->table($table);
         return $builder->getWhere($where, 1)->getNumRows();
@@ -59,7 +65,7 @@ class CommonModel
         return $builder->where($where)->countAllResults();
     }
 
-    public function research(array $like = [], string $table, string $select = '*', array $where = [])
+    public function research(string $table, array $like = [], string $select = '*', array $where = [])
     {
         $builder = $this->db->table($table);
         return $builder->select($select)->where($where)->like($like)->get()->getResult();
