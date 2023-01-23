@@ -9,10 +9,12 @@ class CommonModel
         $this->db = \Config\Database::connect($group);
     }
 
-    public function lists(string $table, string $select = '*', array $where = [], $order = 'id ASC')
+    public function lists(string $table, string $select = '*', array $where = [], $order = 'id ASC',$limit=0,$pkCount=0)
     {
         $builder = $this->db->table($table);
-        return $builder->select($select)->where($where)->orderBy($order)->get()->getResult();
+        $builder->select($select)->where($where)->orderBy($order);
+        if($limit>=0 || $pkCount>=0) $builder->limit($limit,$pkCount);
+        return $builder->get()->getResult();
     }
 
     public function create(string $table, array $data = [])
