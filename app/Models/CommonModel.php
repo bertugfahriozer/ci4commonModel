@@ -42,10 +42,10 @@ class CommonModel
         return $builder->where($where)->delete();
     }
 
-    public function selectOne(string $table, array $where = [], string $select = '*')
+    public function selectOne(string $table, array $where = [], string $select = '*', $order='id ASC')
     {
         $builder = $this->db->table($table);
-        return $builder->select($select)->where($where)->get()->getRow();
+        return $builder->select($select)->where($where)->orderBy($order)->get()->getRow();
     }
 
     public function whereInCheckData(string $att, string $table, array $where = [])
