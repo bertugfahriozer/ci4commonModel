@@ -21,7 +21,7 @@ class CommonModel
     {
         $builder = $this->db->table($table);
         $builder->insert($data);
-        return $builder->insertID();
+        return $this->db->insertID();
     }
 
     public function createMany(string $table, array $data)
