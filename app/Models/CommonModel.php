@@ -9,66 +9,138 @@ class CommonModel
         $this->db = \Config\Database::connect($group);
     }
 
-    public function lists(string $table, string $select = '*', array $where = [], string $order = 'id ASC', int $limit=0,int $pkCount=0,array $like=[])
+    /**
+     * @param string $table
+     * @param string $select
+     * @param array $where
+     * @param string $order
+     * @param int $limit
+     * @param int $pkCount
+     * @param array $like
+     * @return object
+     */
+    public function lists(string $table, string $select = '*', array $where = [], string $order = 'id ASC', int $limit = 0, int $pkCount = 0, array $like = []): object
     {
         $builder = $this->db->table($table);
-        $builder->select($select)->where($where)->orderBy($order);
-        if(!empty($like)) $builder->like($like);
-        if($limit>=0 || $pkCount>=0) $builder->limit($limit,$pkCount);
+        $builder->select($select)->where($where);
+        if (!empty($like)) {
+            if (count($like) === 1) {
+                $builder->like(key($like), reset($like));
+            } else {
+                $builder->groupStart();
+                foreach ($like as $field => $value) {
+                    $builder->orLike($field, $value);
+                }
+                $builder->groupEnd();
+            }
+        }
+        $builder->orderBy($order);
+        if ($limit >= 0 || $pkCount >= 0) $builder->limit($limit, $pkCount);
         return $builder->get()->getResult();
     }
 
-    public function create(string $table, array $data = [])
+    /**
+     * @param string $table
+     * @param array $data
+     * @return int
+     */
+    public function create(string $table, array $data = []): int
     {
         $builder = $this->db->table($table);
         $builder->insert($data);
         return $this->db->insertID();
     }
 
-    public function createMany(string $table, array $data)
+    /**
+     * @param string $table
+     * @param array $data
+     * @return mixed
+     */
+    public function createMany(string $table, array $data): mixed
     {
         $builder = $this->db->table($table);
         return $builder->insertBatch($data);
     }
 
-    public function edit(string $table, array $data = [], array $where = [])
+    /**
+     * @param string $table
+     * @param array $data
+     * @param array $where
+     * @return bool
+     */
+    public function edit(string $table, array $data = [], array $where = []): bool
     {
         $builder = $this->db->table($table);
         return $builder->where($where)->update($data);
     }
 
-    public function remove(string $table, array $where = [])
+    /**
+     * @param string $table
+     * @param array $where
+     * @return bool
+     */
+    public function remove(string $table, array $where = []): bool
     {
         $builder = $this->db->table($table);
         return $builder->where($where)->delete();
     }
 
-    public function selectOne(string $table, array $where = [], string $select = '*', $order='id ASC')
+    /**
+     * @param string $table
+     * @param array $where
+     * @param string $select
+     * @param string $order
+     * @return object
+     */
+    public function selectOne(string $table, array $where = [], string $select = '*',string $order = 'id ASC'): object
     {
         $builder = $this->db->table($table);
         return $builder->select($select)->where($where)->orderBy($order)->get()->getRow();
     }
 
-    public function whereInCheckData(string $att, string $table, array $where = [])
+    /**
+     * @param string $att
+     * @param string $table
+     * @param array $where
+     * @return int
+     */
+    public function whereInCheckData(string $att, string $table, array $where = []): int
     {
         $builder = $this->db->table($table);
         return $builder->whereIn($att, $where, 1)->get()->getNumRows();
 
     }
 
-    public function isHave(string $table, array $where)
+    /**
+     * @param string $table
+     * @param array $where
+     * @return int
+     */
+    public function isHave(string $table, array $where): int
     {
         $builder = $this->db->table($table);
         return $builder->getWhere($where, 1)->getNumRows();
     }
 
-    public function count(string $table, array $where = [])
+    /**
+     * @param string $table
+     * @param array $where
+     * @return int
+     */
+    public function count(string $table, array $where = []): int
     {
         $builder = $this->db->table($table);
         return $builder->where($where)->countAllResults();
     }
 
-    public function research(string $table, array $like = [], string $select = '*', array $where = [])
+    /**
+     * @param string $table
+     * @param array $like
+     * @param string $select
+     * @param array $where
+     * @return object
+     */
+    public function research(string $table, array $like = [], string $select = '*', array $where = []): object
     {
         $builder = $this->db->table($table);
         return $builder->select($select)->where($where)->like($like)->get()->getResult();
