@@ -19,7 +19,7 @@ class CommonModel
      * @param array $like
      * @return object
      */
-    public function lists(string $table, string $select = '*', array $where = [], string $order = 'id ASC', int $limit = 0, int $pkCount = 0, array $like = []): object
+    public function lists(string $table, string $select = '*', array $where = [], string $order = 'id ASC', int $limit = 0, int $pkCount = 0, array $like = []): array
     {
         $builder = $this->db->table($table);
         $builder->select($select)->where($where);
@@ -92,7 +92,7 @@ class CommonModel
      * @param string $order
      * @return object
      */
-    public function selectOne(string $table, array $where = [], string $select = '*',string $order = 'id ASC'): object
+    public function selectOne(string $table, array $where = [], string $select = '*',string $order = 'id ASC'): mixed
     {
         $builder = $this->db->table($table);
         return $builder->select($select)->where($where)->orderBy($order)->get()->getRow();
