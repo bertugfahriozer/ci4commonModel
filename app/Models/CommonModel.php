@@ -17,12 +17,14 @@ class CommonModel
      * @param int $limit
      * @param int $pkCount
      * @param array $like
+     * @param array $orWhere
      * @return object
      */
-    public function lists(string $table, string $select = '*', array $where = [], string $order = 'id ASC', int $limit = 0, int $pkCount = 0, array $like = []): array
+    public function lists(string $table, string $select = '*', array $where = [], string $order = 'id ASC', int $limit = 0, int $pkCount = 0, array $like = [],array $orWhere=[]): array
     {
         $builder = $this->db->table($table);
         $builder->select($select)->where($where);
+        if($orWhere) $builder->orWhere($orWhere);
         if (!empty($like)) {
             if (count($like) === 1) {
                 $builder->like(key($like), reset($like));
