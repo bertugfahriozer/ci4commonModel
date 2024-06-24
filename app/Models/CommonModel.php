@@ -147,4 +147,64 @@ class CommonModel
         $builder = $this->db->table($table);
         return $builder->select($select)->where($where)->like($like)->get()->getResult();
     }
+
+    /**
+     * @param string $table
+     * @param string $select
+     * @param array $joins
+     * @param string $whereInKey
+     * @param array $whereInData
+     * @param string $orderBy
+     * @return object
+    */
+    public function notWhereInList(string $table, string $select = '*', array $joins = [], string $whereInKey, array $whereInData, string $orderBy = 'queue ASC'): object
+    {
+        $builder = $this->db->table($table)->select($select);
+        if (!empty($joins)) {
+            foreach ($joins as $join) {
+                $builder->join($join['table'], $join['cond'], $join['type']);
+            }
+        }
+        $builder->whereNotIn($whereInKey, $whereInData)->orderBy($orderBy);
+        return $builder->get()->getResult();
+    }
+
+    /**
+     * @param string $table
+     * @param string $select
+     * @param array $joins
+     * @param array $where
+     * @param string $order
+     * @param integer $limit
+     * @param integer $pkCount
+     * @param array $like
+     * @param array $orWhere
+     * @return object
+     */
+    public function whereWithJoins(string $table, string $select = '*',array $joins = [], array $where = [], string $order = 'id ASC', int $limit = 0, int $pkCount = 0, array $like = [],array $orWhere=[]): object
+    {
+        $builder = $this->db->table($table);
+        $builder->select($select);
+        if (!empty($joins)) {
+            foreach ($joins as $join) {
+                $builder->join($join['table'], $join['cond'], $join['type']);
+            }
+        }
+        $builder->where($where);
+        if($orWhere) $builder->orWhere($orWhere);
+        if (!empty($like)) {
+            if (count($like) === 1) {
+                $builder->like(key($like), reset($like));
+            } else {
+                $builder->groupStart();
+                foreach ($like as $field => $value) {
+                    $builder->orLike($field, $value);
+                }
+                $builder->groupEnd();
+            }
+        }
+        $builder->orderBy($order);
+        if ($limit >= 0 || $pkCount >= 0) $builder->limit($limit, $pkCount);
+        return $builder->get()->getResult();
+    }
 }
