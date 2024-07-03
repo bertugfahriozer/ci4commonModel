@@ -207,4 +207,13 @@ class CommonModel
         if ($limit >= 0 || $pkCount >= 0) $builder->limit($limit, $pkCount);
         return $builder->get()->getResult();
     }
+
+    /**
+     * @param string $table
+     * @return boolean
+     */
+    public function truncateTable(string $table): bool
+    {
+        return $this->db->table($table)->truncate();
+    }
 }
