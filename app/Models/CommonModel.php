@@ -435,7 +435,7 @@ class CommonModel
      * // This will retrieve orders that are not 'canceled' or 'returned', sorted by order date in descending order.
      * // If no records match the criteria, an empty result object is returned.
      */
-    public function notWhereInList(string $table, string $select = '*', array $joins = [], string $whereInKey, array $whereInData, string $orderBy = 'queue ASC'): object
+    public function notWhereInList(string $table, string $select = '*', array $joins = [], string $whereInKey='', array $whereInData=[], string $orderBy = 'queue ASC'): object
     {
         $builder = $this->db->table($table)->select($select);
         if (!empty($joins)) {
