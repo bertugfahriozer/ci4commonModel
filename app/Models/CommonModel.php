@@ -68,7 +68,7 @@ class CommonModel
      * @version 1.1.8 Added OR WHERE functionality.
      * @version 1.1.9 Added $options and JOIN functionality.
      */
-    public function lists(string $table, string $select = '*', array $where = [], string $order = 'id ASC', int $limit = 0, int $pkCount = 0, array $like = [], array $orWhere = [], array $joins = [], array $options = ['isReset' => false]): array
+    public function lists(string $table, string $select = '*', array $where = [], string $order = 'id ASC', int $limit = 0, int $pkCount = 0, array $like = [], array $orWhere = [], array $joins = [], array $options = ['isReset' => false]): mixed
     {
         $builder = $this->db->table($table);
         $builder->select($select);
