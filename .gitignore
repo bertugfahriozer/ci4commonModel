@@ -3,3 +3,4 @@
 .vscode
 phpDocumentor.phar
 .phpdoc
+.DS_Store
