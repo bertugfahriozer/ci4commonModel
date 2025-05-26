@@ -118,9 +118,9 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.12" class="phpdocumentor-element-found-in__source" data-line="12" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.18" class="phpdocumentor-element-found-in__source" data-line="18" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
         
@@ -158,6 +158,12 @@
                         &nbsp;: mixed            </span>
 </dt>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#property_forge">$forge</a>
+    <span>
+                        &nbsp;: mixed            </span>
+</dt>
+
     </dl>
 
 <h4 id="toc-methods">
@@ -171,6 +177,13 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_addColumnToTable">addColumnToTable()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Adds a new column to the specified table.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_count">count()</a>
@@ -194,11 +207,53 @@
 <dd>Inserts multiple records into the specified table.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_drpForeignKey">drpForeignKey()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Drop a foreign key to the specified table.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_drpKey">drpKey()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Drop a key to the specified table.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_drpPrimaryKey">drpPrimaryKey()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Drop a primary key to the specified table.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_edit">edit()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>Updates records in the specified table based on the given conditions.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_emptyTableDatas">emptyTableDatas()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Truncates the specified table, removing all records while keeping the table structure intact.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_getTableFields">getTableFields()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Retrieves the fields of the specified table.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_getTableList">getTableList()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Retrieves the list of tables in the database.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_isHave">isHave()</a>
@@ -212,6 +267,27 @@
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;|null|false    </span>
 </dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_modifyColumnInfos">modifyColumnInfos()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Modifies the column information of the specified table.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_newDatabase">newDatabase()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Creates a new database with the specified name.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_newTable">newTable()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Creates a new table in the database with the specified fields and options.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_notWhereInList">notWhereInList()</a>
@@ -228,6 +304,27 @@
 <dd>Deletes records from the specified table based on the given conditions.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_removeColumnFromTable">removeColumnFromTable()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Removes the specified columns from the table.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_removeDatabase">removeDatabase()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Removes the specified database.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_removeTable">removeTable()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Removes the specified table from the database.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_research">research()</a>
     <span>
                                 &nbsp;: object    </span>
@@ -242,11 +339,11 @@
 <dd>Selects a single record from the database based on conditions.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_truncateTable">truncateTable()</a>
+    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_updateTableName">updateTableName()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>Truncates the specified table, removing all records while keeping the table structure intact.</dd>
+<dd>Updates the name of the specified table.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_whereInCheckData">whereInCheckData()</a>
@@ -254,13 +351,6 @@
                                 &nbsp;: int    </span>
 </dt>
 <dd>Checks if there are records in the table where a specified column&#039;s value matches any of the provided values.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/ci4commonmodel-Models-CommonModel.html#method_whereWithJoins">whereWithJoins()</a>
-    <span>
-                                &nbsp;: object    </span>
-</dt>
-<dd>Retrieves records from the specified table with optional joins, where conditions, like conditions, and ordering, with pagination support.</dd>
 
     </dl>
 
@@ -292,9 +382,9 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.14" class="phpdocumentor-element-found-in__source" data-line="14" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.20" class="phpdocumentor-element-found-in__source" data-line="20" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
     
@@ -303,6 +393,43 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">$db</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_forge">
+        $forge
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#property_forge" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">21</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.21" class="phpdocumentor-element-found-in__source" data-line="21" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$forge</span>
     </code>
 
     
@@ -334,9 +461,9 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.16" class="phpdocumentor-element-found-in__source" data-line="16" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.23" class="phpdocumentor-element-found-in__source" data-line="23" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
     
@@ -371,6 +498,115 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_addColumnToTable">
+        addColumnToTable()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_addColumnToTable" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">607</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.607" class="phpdocumentor-element-found-in__source" data-line="607" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Adds a new column to the specified table.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">addColumnToTable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fields</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$table</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the table to modify.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$fields</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An associative array of fields and their data types.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_addColumnToTable#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the parameters are invalid.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>// Example usage:
+$table = 'users';
+$fields = [
+'preferences' =&gt; ['type' =&gt; 'TEXT', 'after' =&gt; 'another_field'],
+];
+if($this-&gt;commonModel-&gt;addColumnToTable($table, $fields)) {
+echo 'Column added successfully.';
+} else {
+echo 'Failed to add the column.';
+}</p>
+<p>// This will add a new column named 'preferences' of type TEXT to the 'users' table, after the 'another_field' column.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true on success, false on failure.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_count">
         count()
         <a href="classes/ci4commonmodel-Models-CommonModel.html#method_count" class="headerlink"><i class="fas fa-link"></i></a>
@@ -379,9 +615,9 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">353</span>
+    <span class="phpdocumentor-element-found-in__line">361</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.353" class="phpdocumentor-element-found-in__source" data-line="353" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.361" class="phpdocumentor-element-found-in__source" data-line="361" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
         <p class="phpdocumentor-summary">Counts the number of records in the specified table that match the given conditions.</p>
@@ -481,9 +717,9 @@ echo &quot;Total number of records: &quot; . $countAll;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">124</span>
+    <span class="phpdocumentor-element-found-in__line">132</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.124" class="phpdocumentor-element-found-in__source" data-line="124" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.132" class="phpdocumentor-element-found-in__source" data-line="132" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
         <p class="phpdocumentor-summary">Inserts a new record into the specified table and returns the insert ID.</p>
@@ -590,9 +826,9 @@ echo &quot;Failed to create user.&quot;;
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">169</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.161" class="phpdocumentor-element-found-in__source" data-line="161" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.169" class="phpdocumentor-element-found-in__source" data-line="169" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
         <p class="phpdocumentor-summary">Inserts multiple records into the specified table.</p>
@@ -695,6 +931,327 @@ echo &quot;Failed to insert records.&quot;;
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_drpForeignKey">
+        drpForeignKey()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_drpForeignKey" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">876</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.876" class="phpdocumentor-element-found-in__source" data-line="876" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Drop a foreign key to the specified table.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">drpForeignKey</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tableName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$foreignKeyName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$tableName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the table to modify.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$foreignKeyName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the foreign key to drop.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_drpForeignKey#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the parameters are invalid.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>// Example usage:
+$tableName = 'orders';
+$foreignKeyName = 'fk_orders_users'; // The name of the foreign key to drop
+if ($this-&gt;commonModel-&gt;drpForeignKey($tableName, $foreignKeyName)) {
+echo 'Foreign key dropped successfully.';
+} else {
+echo 'Failed to drop the foreign key.';
+}</p>
+<p>// This will remove the specified foreign key from the 'orders' table.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true on success, false on failure.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_drpKey">
+        drpKey()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_drpKey" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">848</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.848" class="phpdocumentor-element-found-in__source" data-line="848" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Drop a key to the specified table.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">drpKey</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tableName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keyName</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$prefixKeyName</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$tableName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the table to modify.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$keyName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the key to drop.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$prefixKeyName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Whether to prefix the key name with the table name.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_drpKey#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the parameters are invalid.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>// Example usage:
+$tableName = 'users';
+$keyName = 'my_key_name';
+$prefixKeyName = true; // Set to true to prefix the key name with the table name
+if ($this-&gt;commonModel-&gt;drpKey($tableName, $keyName, $prefixKeyName)) {
+echo 'Key dropped successfully.';
+} else {
+echo 'Failed to drop the key.';
+}</p>
+<p>// This will remove the specified key from the 'users' table.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true on success, false on failure.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_drpPrimaryKey">
+        drpPrimaryKey()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_drpPrimaryKey" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">818</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.818" class="phpdocumentor-element-found-in__source" data-line="818" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Drop a primary key to the specified table.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">drpPrimaryKey</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tableName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$tableName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the table to modify.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_drpPrimaryKey#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the parameters are invalid.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>// Example usage:
+$tableName = 'users';
+if ($this-&gt;commonModel-&gt;drpPrimaryKey($tableName)) {
+echo 'Primary key dropped successfully.';
+} else {
+echo 'Failed to drop the primary key.';
+}</p>
+<p>// This will remove the primary key from the 'users' table.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true on success, false on failure.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_edit">
         edit()
         <a href="classes/ci4commonmodel-Models-CommonModel.html#method_edit" class="headerlink"><i class="fas fa-link"></i></a>
@@ -703,9 +1260,9 @@ echo &quot;Failed to insert records.&quot;;
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">197</span>
+    <span class="phpdocumentor-element-found-in__line">205</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.197" class="phpdocumentor-element-found-in__source" data-line="197" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.205" class="phpdocumentor-element-found-in__source" data-line="205" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
         <p class="phpdocumentor-summary">Updates records in the specified table based on the given conditions.</p>
@@ -814,6 +1371,282 @@ echo &quot;Failed to update record.&quot;;
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_emptyTableDatas">
+        emptyTableDatas()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_emptyTableDatas" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">713</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.713" class="phpdocumentor-element-found-in__source" data-line="713" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Truncates the specified table, removing all records while keeping the table structure intact.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">emptyTableDatas</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$table</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the table to truncate.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_emptyTableDatas#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">version</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>Changed the method name from <code class="prettyprint">truncateTable</code> to <code class="prettyprint">emptyTableDatas</code>.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the table name is invalid or not provided.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.1.9</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>// Example usage:
+$table = 'users';</p>
+<p>if ($this-&gt;commonModel-&gt;emptyTableDatas($table)) {
+echo 'Table truncated successfully.';
+} else {
+echo 'Failed to truncate the table.';
+}</p>
+<p>// This will remove all rows from the 'users' table without deleting the table itself.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true on success, false on failure.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getTableFields">
+        getTableFields()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_getTableFields" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">740</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.740" class="phpdocumentor-element-found-in__source" data-line="740" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Retrieves the fields of the specified table.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getTableFields</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tableName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$tableName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the table to retrieve fields from.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_getTableFields#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the table name is invalid or not provided.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>// Example usage:
+$tableName = 'users';</p>
+<p>$fields = $this-&gt;commonModel-&gt;getTableFields($tableName);</p>
+<p>foreach ($fields as $field) {
+echo $field-&gt;name . ' - ' . $field-&gt;type . '<br>';
+}</p>
+<p>// This will print the names and types of all fields in the 'users' table.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns an array of field objects.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getTableList">
+        getTableList()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_getTableList" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">468</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.468" class="phpdocumentor-element-found-in__source" data-line="468" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Retrieves the list of tables in the database.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getTableList</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_getTableList#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>// Example usage:
+$tables = $this-&gt;commonModel-&gt;getTableList();</p>
+<p>foreach ($tables as $table) {
+echo $table . '<br>';
+}</p>
+<p>// This will print the names of all tables in the database.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns an array of table names.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_isHave">
         isHave()
         <a href="classes/ci4commonmodel-Models-CommonModel.html#method_isHave" class="headerlink"><i class="fas fa-link"></i></a>
@@ -822,9 +1655,9 @@ echo &quot;Failed to update record.&quot;;
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">322</span>
+    <span class="phpdocumentor-element-found-in__line">330</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.322" class="phpdocumentor-element-found-in__source" data-line="322" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.330" class="phpdocumentor-element-found-in__source" data-line="330" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
         <p class="phpdocumentor-summary">Checks if there are any records in the specified table that match the given conditions.</p>
@@ -921,9 +1754,9 @@ echo &quot;Number of matching records: &quot; . $count;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.65" class="phpdocumentor-element-found-in__source" data-line="65" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.73" class="phpdocumentor-element-found-in__source" data-line="73" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
     
@@ -1138,6 +1971,363 @@ echo &quot;No records found.&quot;;
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_modifyColumnInfos">
+        modifyColumnInfos()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_modifyColumnInfos" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">686</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.686" class="phpdocumentor-element-found-in__source" data-line="686" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Modifies the column information of the specified table.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">modifyColumnInfos</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fields</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$table</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the table to modify.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$fields</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An associative array of fields and their new data types.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_modifyColumnInfos#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the parameters are invalid.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>// Example usage:
+$table = 'users';
+$fields = [
+'old_name' =&gt; [
+'name' =&gt; 'new_name',
+'type' =&gt; 'TEXT',
+'null' =&gt; false,
+],
+];
+$isModified = $this-&gt;commonModel-&gt;modifyColumnInfos($table, $fields);</p>
+<p>// This will change the 'old_name' column to 'new_name' with type TEXT and not null in the 'users' table.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true on success, false on failure.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_newDatabase">
+        newDatabase()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_newDatabase" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">765</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.765" class="phpdocumentor-element-found-in__source" data-line="765" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Creates a new database with the specified name.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">newDatabase</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dbName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$dbName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_newDatabase#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the database name is invalid or not provided.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>// Example usage:
+$dbName = 'new_database';
+if ($this-&gt;commonModel-&gt;newDatabase($dbName)) {
+echo 'Database created successfully.';
+} else {
+echo 'Failed to create the database.';
+}</p>
+<p>// This will create a new database named 'new_database' on the server.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_newTable">
+        newTable()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_newTable" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">530</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.530" class="phpdocumentor-element-found-in__source" data-line="530" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Creates a new table in the database with the specified fields and options.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">newTable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fields</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$addKeys</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[&#039;keys&#039; =&gt; [], &#039;primary&#039; =&gt; false, &#039;unique&#039; =&gt; false, &#039;keyName&#039; =&gt; &#039;&#039;]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$foreignKeyFilled</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[&#039;field&#039; =&gt; &#039;&#039;, &#039;referenceTable&#039; =&gt; &#039;&#039;, &#039;referenceField&#039; =&gt; &#039;&#039;, &#039;onDelete&#039; =&gt; &#039;&#039;, &#039;onUpdate&#039; =&gt; &#039;&#039;, &#039;fkName&#039; =&gt; &#039;&#039;]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$table</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the table to create.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$fields</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An associative array of fields and their data types.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$addKeys</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[&#039;keys&#039; =&gt; [], &#039;primary&#039; =&gt; false, &#039;unique&#039; =&gt; false, &#039;keyName&#039; =&gt; &#039;&#039;]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Optional keys to add to the table.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$foreignKeyFilled</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[&#039;field&#039; =&gt; &#039;&#039;, &#039;referenceTable&#039; =&gt; &#039;&#039;, &#039;referenceField&#039; =&gt; &#039;&#039;, &#039;onDelete&#039; =&gt; &#039;&#039;, &#039;onUpdate&#039; =&gt; &#039;&#039;, &#039;fkName&#039; =&gt; &#039;&#039;]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Optional foreign key constraints.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_newTable#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the parameters are invalid.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>//Example usage:
+$table = 'new_table';
+$fields = [
+'id' =&gt; [
+'type'           =&gt; 'INT',
+'constraint'     =&gt; 5,
+'unsigned'       =&gt; true,
+'auto_increment' =&gt; true,
+],
+'title' =&gt; [
+'type'       =&gt; 'VARCHAR',
+'constraint' =&gt; '100',
+'unique'     =&gt; true,
+],
+'author' =&gt; [
+'type'       =&gt; 'VARCHAR',
+'constraint' =&gt; 100,
+'default'    =&gt; 'King of Town',
+],
+'description' =&gt; [
+'type' =&gt; 'TEXT',
+'null' =&gt; true,
+],
+'status' =&gt; [
+'type'       =&gt; 'ENUM',
+'constraint' =&gt; ['publish', 'pending', 'draft'],
+'default'    =&gt; 'pending',
+],
+];</p>
+<p>$addKeys = [
+'keys'=&gt;['blog_name', 'blog_label'],
+'primary'=&gt;false,
+'unique'=&gt;false,
+'keyName'=&gt;'my_key_name'
+]
+if($this-&gt;commonModel-&gt;newTable($table, $fields, $addKeys)) {
+echo 'Table added successfully.';
+} else {
+echo 'Failed to add the table.';
+}</p>
+<p>// This will create a new table named 'new_table' with the specified fields and options.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true on success, false on failure.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_notWhereInList">
         notWhereInList()
         <a href="classes/ci4commonmodel-Models-CommonModel.html#method_notWhereInList" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1146,16 +2336,16 @@ echo &quot;No records found.&quot;;
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">432</span>
+    <span class="phpdocumentor-element-found-in__line">440</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.432" class="phpdocumentor-element-found-in__source" data-line="432" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.440" class="phpdocumentor-element-found-in__source" data-line="440" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
         <p class="phpdocumentor-summary">Retrieves records from the specified table, excluding those where the given key matches any value in the specified array, with optional joins and sorting.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">notWhereInList</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$select</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;*&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$joins</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$whereInKey</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$whereInData</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$orderBy</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;queue ASC&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
+                    <span class="phpdocumentor-signature__name">notWhereInList</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$select</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;*&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$joins</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$whereInKey</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$whereInData</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$orderBy</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;queue ASC&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1193,7 +2383,7 @@ echo &quot;No records found.&quot;;
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$whereInKey</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The column to check for exclusion based on the values in $whereInData.</p>
 </section>
@@ -1202,7 +2392,7 @@ echo &quot;No records found.&quot;;
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$whereInData</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>An array of values that should be excluded from the results.</p>
 </section>
@@ -1297,9 +2487,9 @@ echo $row-&gt;id . ' - ' . $row-&gt;customer_name . ' - ' . $row-&gt;order_date 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">231</span>
+    <span class="phpdocumentor-element-found-in__line">239</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.231" class="phpdocumentor-element-found-in__source" data-line="231" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.239" class="phpdocumentor-element-found-in__source" data-line="239" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
         <p class="phpdocumentor-summary">Deletes records from the specified table based on the given conditions.</p>
@@ -1400,6 +2590,303 @@ echo &quot;Failed to delete record.&quot;;
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_removeColumnFromTable">
+        removeColumnFromTable()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_removeColumnFromTable" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">630</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.630" class="phpdocumentor-element-found-in__source" data-line="630" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Removes the specified columns from the table.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">removeColumnFromTable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fields</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$table</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the table to modify.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$fields</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An array of column names to remove.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_removeColumnFromTable#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the parameters are invalid.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>// Example usage:
+$table = 'users';
+$fields = ['preferences', 'another_field'];
+$isDropped = $this-&gt;commonModel-&gt;removeColumnFromTable($table, $fields);</p>
+<p>// This will remove the 'preferences' and 'another_field' columns from the 'users' table.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true on success, false on failure.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_removeDatabase">
+        removeDatabase()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_removeDatabase" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">792</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.792" class="phpdocumentor-element-found-in__source" data-line="792" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Removes the specified database.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">removeDatabase</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dbName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$dbName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the database to remove.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_removeDatabase#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the database name is invalid or not provided.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>// Example usage:
+$dbName = 'old_database';</p>
+<p>if ($this-&gt;commonModel-&gt;removeDatabase($dbName)) {
+echo 'Database removed successfully.';
+} else {
+echo 'Failed to remove the database.';
+}</p>
+<p>// This will delete the 'old_database' from the server.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true on success, false on failure.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_removeTable">
+        removeTable()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_removeTable" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">578</span>
+
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.578" class="phpdocumentor-element-found-in__source" data-line="578" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+    </aside>
+
+        <p class="phpdocumentor-summary">Removes the specified table from the database.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">removeTable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$table</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the table to remove.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_removeTable#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the table name is invalid or not provided.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
+                                                                                
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>// Example usage:
+$table = 'old_table';</p>
+<p>if ($this-&gt;commonModel-&gt;removeTable($table)) {
+echo 'Table removed successfully.';
+} else {
+echo 'Failed to remove the table.';
+}</p>
+<p>// This will delete the 'old_table' from the database.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true on success, false on failure.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_research">
         research()
         <a href="classes/ci4commonmodel-Models-CommonModel.html#method_research" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1408,9 +2895,9 @@ echo &quot;Failed to delete record.&quot;;
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">389</span>
+    <span class="phpdocumentor-element-found-in__line">397</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.389" class="phpdocumentor-element-found-in__source" data-line="389" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.397" class="phpdocumentor-element-found-in__source" data-line="397" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
         <p class="phpdocumentor-summary">Retrieves records from the specified table that match the given conditions and like patterns.</p>
@@ -1536,9 +3023,9 @@ echo $row-&gt;id . ' - ' . $row-&gt;name . ' - $' . $row-&gt;price . '<br>';
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">266</span>
+    <span class="phpdocumentor-element-found-in__line">274</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.266" class="phpdocumentor-element-found-in__source" data-line="266" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.274" class="phpdocumentor-element-found-in__source" data-line="274" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
         <p class="phpdocumentor-summary">Selects a single record from the database based on conditions.</p>
@@ -1657,24 +3144,24 @@ echo &quot;No records found.&quot;;
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_truncateTable">
-        truncateTable()
-        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_truncateTable" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_updateTableName">
+        updateTableName()
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_updateTableName" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">535</span>
+    <span class="phpdocumentor-element-found-in__line">657</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.535" class="phpdocumentor-element-found-in__source" data-line="535" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.657" class="phpdocumentor-element-found-in__source" data-line="657" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
-        <p class="phpdocumentor-summary">Truncates the specified table, removing all records while keeping the table structure intact.</p>
+        <p class="phpdocumentor-summary">Updates the name of the specified table.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">truncateTable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">updateTableName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$oldName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$newName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1683,11 +3170,20 @@ echo &quot;No records found.&quot;;
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$table</span>
+                <span class="phpdocumentor-signature__argument__name">$oldName</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The name of the table to truncate.</p>
+                    <section class="phpdocumentor-description"><p>The current name of the table.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$newName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The new name for the table.</p>
 </section>
 
             </dd>
@@ -1696,7 +3192,7 @@ echo &quot;No records found.&quot;;
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_truncateTable#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_updateTableName#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -1706,7 +3202,7 @@ echo &quot;No records found.&quot;;
                 <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
                                                             
-                                                 <section class="phpdocumentor-description"><p>If the table name is invalid or not provided.</p>
+                                                 <section class="phpdocumentor-description"><p>If the parameters are invalid.</p>
 </section>
 
                                     </dd>
@@ -1714,7 +3210,7 @@ echo &quot;No records found.&quot;;
                     <span class="phpdocumentor-tag__name">since</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                            <span class="phpdocumentor-tag-link">1.1.9</span>
+                                            <span class="phpdocumentor-tag-link">1.2.0</span>
                                                                                 
                                              
                                     </dd>
@@ -1724,13 +3220,14 @@ echo &quot;No records found.&quot;;
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
                                                  <section class="phpdocumentor-description"><p>// Example usage:
-$table = 'users';</p>
-<p>if ($this-&gt;commonModel-&gt;truncateTable($table)) {
-echo 'Table truncated successfully.';
+$oldName = 'old_table_name';
+$newName = 'new_table_name';
+if($this-&gt;commonModel-&gt;updateTableName($oldName, $newName)) {
+echo 'Table name updated successfully.';
 } else {
-echo 'Failed to truncate the table.';
+echo 'Failed to update the table name.';
 }</p>
-<p>// This will remove all rows from the 'users' table without deleting the table itself.</p>
+<p>// This will rename the table from 'old_table_name' to 'new_table_name'.</p>
 </section>
 
                                     </dd>
@@ -1762,9 +3259,9 @@ echo 'Failed to truncate the table.';
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">295</span>
+    <span class="phpdocumentor-element-found-in__line">303</span>
 
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.295" class="phpdocumentor-element-found-in__source" data-line="295" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
+            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.303" class="phpdocumentor-element-found-in__source" data-line="303" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
     </aside>
 
         <p class="phpdocumentor-summary">Checks if there are records in the table where a specified column&#039;s value matches any of the provided values.</p>
@@ -1850,186 +3347,6 @@ echo &quot;Number of matching records: &quot; . $count;</p>
         <span class="phpdocumentor-signature__response_type">int</span>
                     &mdash;
                 <section class="phpdocumentor-description"><p>Returns the number of rows that match the condition</p>
-</section>
-
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_whereWithJoins">
-        whereWithJoins()
-        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_whereWithJoins" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/Models/CommonModel.php"><a href="files/app-models-commonmodel.html"><abbr title="app/Models/CommonModel.php">CommonModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">486</span>
-
-            <a href="classes/ci4commonmodel-Models-CommonModel.html#source-view.486" class="phpdocumentor-element-found-in__source" data-line="486" data-modal="source-view" data-src="files/app/Models/CommonModel.php.txt"></a>
-    </aside>
-
-        <p class="phpdocumentor-summary">Retrieves records from the specified table with optional joins, where conditions, like conditions, and ordering, with pagination support.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">whereWithJoins</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$select</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;*&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$joins</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$where</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$order</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;id ASC&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pkCount</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$like</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$orWhere</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$table</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The name of the table to query.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$select</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;*&#039;</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The columns to select, separated by commas. Defaults to '*' to select all columns.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$joins</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Array of join conditions, where each element is an associative array with keys 'table', 'cond', and 'type' for the join table, condition, and type respectively.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$where</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>An array of conditions to filter the records by.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$order</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;id ASC&#039;</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The column and direction to order the results by, defaults to 'id ASC'.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$limit</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">0</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The maximum number of records to return, defaults to 0 (no limit).</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$pkCount</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">0</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The number of records to skip (for pagination), defaults to 0.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$like</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>An array of 'like' conditions for partial matching. Can contain multiple conditions.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$orWhere</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>An array of 'or' conditions for additional filtering.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="classes/ci4commonmodel-Models-CommonModel.html#method_whereWithJoins#tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><abbr title="\ci4commonmodel\Models\InvalidArgumentException">InvalidArgumentException</abbr></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If the parameters are invalid.</p>
-</section>
-
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">since</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                            <span class="phpdocumentor-tag-link">1.1.8</span>
-                                                                                
-                                             
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">example</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>// Example parameters:
-$table = 'orders';
-$select = 'orders.id, customers.name, orders.total';
-$joins = [
-['table' =&gt; 'customers', 'cond' =&gt; 'orders.customer_id = customers.id', 'type' =&gt; 'inner']
-];
-$where = ['orders.status' =&gt; 'completed'];
-$order = 'orders.id DESC';
-$limit = 10;
-$pkCount = 0;
-$like = ['customers.name' =&gt; 'John'];
-$orWhere = ['orders.total &gt;' =&gt; 100];</p>
-<p>// Usage example:
-$results = $this-&gt;commonModel-&gt;whereWithJoins($table, $select, $joins, $where, $order, $limit, $pkCount, $like, $orWhere);</p>
-<p>// Processing the results:
-foreach ($results as $row) {
-echo $row-&gt;id . ' - ' . $row-&gt;name . ' - ' . $row-&gt;total . '<br>';
-}</p>
-<p>// This will retrieve completed orders where the customer's name contains 'John', or where the order total is greater than 100, joined with customer data, limited to 10 results.</p>
-</section>
-
-                                    </dd>
-                                            </dl>
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">object</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>Returns an object containing the result set.</p>
 </section>
 
             </section>
@@ -2149,6 +3466,7 @@ echo $row-&gt;id . ' - ' . $row-&gt;name . ' - ' . $row-&gt;total . '<br>';
                 <li>
                     <ul class="phpdocumentor-list -clean">
                                                     <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#property_db">$db</a></li>
+                                                    <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#property_forge">$forge</a></li>
                                             </ul>
                 </li>
             
@@ -2156,19 +3474,31 @@ echo $row-&gt;id . ' - ' . $row-&gt;name . ' - ' . $row-&gt;total . '<br>';
             <li>
                 <ul class="phpdocumentor-list -clean">
                                             <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method___construct">__construct()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_addColumnToTable">addColumnToTable()</a></li>
                                             <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_count">count()</a></li>
                                             <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_create">create()</a></li>
                                             <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_createMany">createMany()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_drpForeignKey">drpForeignKey()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_drpKey">drpKey()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_drpPrimaryKey">drpPrimaryKey()</a></li>
                                             <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_edit">edit()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_emptyTableDatas">emptyTableDatas()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_getTableFields">getTableFields()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_getTableList">getTableList()</a></li>
                                             <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_isHave">isHave()</a></li>
                                             <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_lists">lists()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_modifyColumnInfos">modifyColumnInfos()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_newDatabase">newDatabase()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_newTable">newTable()</a></li>
                                             <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_notWhereInList">notWhereInList()</a></li>
                                             <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_remove">remove()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_removeColumnFromTable">removeColumnFromTable()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_removeDatabase">removeDatabase()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_removeTable">removeTable()</a></li>
                                             <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_research">research()</a></li>
                                             <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_selectOne">selectOne()</a></li>
-                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_truncateTable">truncateTable()</a></li>
+                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_updateTableName">updateTableName()</a></li>
                                             <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_whereInCheckData">whereInCheckData()</a></li>
-                                            <li class=""><a href="classes/ci4commonmodel-Models-CommonModel.html#method_whereWithJoins">whereWithJoins()</a></li>
                                     </ul>
             </li>
                     </ul>

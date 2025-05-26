@@ -66,20 +66,85 @@ Search.appendIndex(
             "summary": "Retrieves\u0020records\u0020from\u0020the\u0020specified\u0020table,\u0020excluding\u0020those\u0020where\u0020the\u0020given\u0020key\u0020matches\u0020any\u0020value\u0020in\u0020the\u0020specified\u0020array,\u0020with\u0020optional\u0020joins\u0020and\u0020sorting.",
             "url": "classes/ci4commonmodel-Models-CommonModel.html#method_notWhereInList"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AwhereWithJoins\u0028\u0029",
-            "name": "whereWithJoins",
-            "summary": "Retrieves\u0020records\u0020from\u0020the\u0020specified\u0020table\u0020with\u0020optional\u0020joins,\u0020where\u0020conditions,\u0020like\u0020conditions,\u0020and\u0020ordering,\u0020with\u0020pagination\u0020support.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_whereWithJoins"
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AgetTableList\u0028\u0029",
+            "name": "getTableList",
+            "summary": "Retrieves\u0020the\u0020list\u0020of\u0020tables\u0020in\u0020the\u0020database.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_getTableList"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AtruncateTable\u0028\u0029",
-            "name": "truncateTable",
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AnewTable\u0028\u0029",
+            "name": "newTable",
+            "summary": "Creates\u0020a\u0020new\u0020table\u0020in\u0020the\u0020database\u0020with\u0020the\u0020specified\u0020fields\u0020and\u0020options.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_newTable"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AremoveTable\u0028\u0029",
+            "name": "removeTable",
+            "summary": "Removes\u0020the\u0020specified\u0020table\u0020from\u0020the\u0020database.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_removeTable"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AaddColumnToTable\u0028\u0029",
+            "name": "addColumnToTable",
+            "summary": "Adds\u0020a\u0020new\u0020column\u0020to\u0020the\u0020specified\u0020table.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_addColumnToTable"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AremoveColumnFromTable\u0028\u0029",
+            "name": "removeColumnFromTable",
+            "summary": "Removes\u0020the\u0020specified\u0020columns\u0020from\u0020the\u0020table.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_removeColumnFromTable"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AupdateTableName\u0028\u0029",
+            "name": "updateTableName",
+            "summary": "Updates\u0020the\u0020name\u0020of\u0020the\u0020specified\u0020table.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_updateTableName"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AmodifyColumnInfos\u0028\u0029",
+            "name": "modifyColumnInfos",
+            "summary": "Modifies\u0020the\u0020column\u0020information\u0020of\u0020the\u0020specified\u0020table.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_modifyColumnInfos"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AemptyTableDatas\u0028\u0029",
+            "name": "emptyTableDatas",
             "summary": "Truncates\u0020the\u0020specified\u0020table,\u0020removing\u0020all\u0020records\u0020while\u0020keeping\u0020the\u0020table\u0020structure\u0020intact.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_truncateTable"
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_emptyTableDatas"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AgetTableFields\u0028\u0029",
+            "name": "getTableFields",
+            "summary": "Retrieves\u0020the\u0020fields\u0020of\u0020the\u0020specified\u0020table.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_getTableFields"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AnewDatabase\u0028\u0029",
+            "name": "newDatabase",
+            "summary": "Creates\u0020a\u0020new\u0020database\u0020with\u0020the\u0020specified\u0020name.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_newDatabase"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AremoveDatabase\u0028\u0029",
+            "name": "removeDatabase",
+            "summary": "Removes\u0020the\u0020specified\u0020database.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_removeDatabase"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AdrpPrimaryKey\u0028\u0029",
+            "name": "drpPrimaryKey",
+            "summary": "Drop\u0020a\u0020primary\u0020key\u0020to\u0020the\u0020specified\u0020table.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_drpPrimaryKey"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AdrpKey\u0028\u0029",
+            "name": "drpKey",
+            "summary": "Drop\u0020a\u0020key\u0020to\u0020the\u0020specified\u0020table.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_drpKey"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AdrpForeignKey\u0028\u0029",
+            "name": "drpForeignKey",
+            "summary": "Drop\u0020a\u0020foreign\u0020key\u0020to\u0020the\u0020specified\u0020table.",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_drpForeignKey"
         },                {
             "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003A\u0024db",
             "name": "db",
             "summary": "",
             "url": "classes/ci4commonmodel-Models-CommonModel.html#property_db"
+        },                {
+            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003A\u0024forge",
+            "name": "forge",
+            "summary": "",
+            "url": "classes/ci4commonmodel-Models-CommonModel.html#property_forge"
         },                {
             "fqsen": "\\",
             "name": "\\",

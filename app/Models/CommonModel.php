@@ -9,7 +9,7 @@
  *
  * @author Bertuğ Fahri ÖZER <bertugfahriozer@gmail.com>
  * @link https://github.com/bertugfahriozer/ci4commonModel
- * @filesource
+ * @filesource CommonModel.php
  * @license MIT License (https://opensource.org/license/mit)
  */
 
@@ -482,9 +482,53 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
+     * @example
+     * //Example usage:
+     *  $table = 'new_table';
+     *  $fields = [
+     *       'id' => [
+     *           'type'           => 'INT',
+     *           'constraint'     => 5,
+     *           'unsigned'       => true,
+     *           'auto_increment' => true,
+     *       ],
+     *       'title' => [
+     *           'type'       => 'VARCHAR',
+     *           'constraint' => '100',
+     *           'unique'     => true,
+     *       ],
+     *       'author' => [
+     *           'type'       => 'VARCHAR',
+     *           'constraint' => 100,
+     *           'default'    => 'King of Town',
+     *       ],
+     *       'description' => [
+     *           'type' => 'TEXT',
+     *           'null' => true,
+     *       ],
+     *       'status' => [
+     *           'type'       => 'ENUM',
+     *           'constraint' => ['publish', 'pending', 'draft'],
+     *           'default'    => 'pending',
+     *       ],
+     *  ];
+     *
+     *  $addKeys = [
+     *      'keys'=>['blog_name', 'blog_label'],
+     *      'primary'=>false,
+     *      'unique'=>false,
+     *      'keyName'=>'my_key_name'
+     *  ]
+     *  if($this->commonModel->newTable($table, $fields, $addKeys)) {
+     *      echo 'Table added successfully.';
+     *  } else {
+     *     echo 'Failed to add the table.';
+     *  }
+     *
+     *  // This will create a new table named 'new_table' with the specified fields and options.
      */
     public function newTable(string $table, array $fields, array $addKeys = [
-        'keys' = [],
+        'keys' => [],
         'primary' => false,
         'unique' => false,
         'keyName' => ''
@@ -546,6 +590,19 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
+     * @example
+     * // Example usage:
+     * $table = 'users';
+     * $fields = [
+     *      'preferences' => ['type' => 'TEXT', 'after' => 'another_field'],
+     * ];
+     * if($this->commonModel->addColumnToTable($table, $fields)) {
+     *     echo 'Column added successfully.';
+     * } else {
+     *     echo 'Failed to add the column.';
+     * }
+     *
+     * // This will add a new column named 'preferences' of type TEXT to the 'users' table, after the 'another_field' column.
      */
     public function addColumnToTable(string $table, array $fields): bool
     {
@@ -562,6 +619,13 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
+     * @example
+     * // Example usage:
+     * $table = 'users';
+     * $fields = ['preferences', 'another_field'];
+     * $isDropped = $this->commonModel->removeColumnFromTable($table, $fields);
+     *
+     * // This will remove the 'preferences' and 'another_field' columns from the 'users' table.
      */
     public function removeColumnFromTable(string $table, array $fields)
     {
@@ -578,6 +642,17 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
+     * @example
+     * // Example usage:
+     * $oldName = 'old_table_name';
+     * $newName = 'new_table_name';
+     * if($this->commonModel->updateTableName($oldName, $newName)) {
+     *     echo 'Table name updated successfully.';
+     * } else {
+     *     echo 'Failed to update the table name.';
+     * }
+     *
+     * // This will rename the table from 'old_table_name' to 'new_table_name'.
      */
     public function updateTableName(string $oldName, string $newName): bool
     {
@@ -594,6 +669,19 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
+     * @example
+     * // Example usage:
+     * $table = 'users';
+     * $fields = [
+     *      'old_name' => [
+     *          'name' => 'new_name',
+     *          'type' => 'TEXT',
+     *          'null' => false,
+     *      ],
+     *  ];
+     * $isModified = $this->commonModel->modifyColumnInfos($table, $fields);
+     *
+     * // This will change the 'old_name' column to 'new_name' with type TEXT and not null in the 'users' table.
      */
     public function modifyColumnInfos(string $table, array $fields): mixed
     {
@@ -661,7 +749,18 @@ class CommonModel
      *
      * @return boolean
      *
+     * @throws InvalidArgumentException If the database name is invalid or not provided.
      * @since 1.2.0
+     * @example
+     * // Example usage:
+     * $dbName = 'new_database';
+     * if ($this->commonModel->newDatabase($dbName)) {
+     *     echo 'Database created successfully.';
+     * } else {
+     *     echo 'Failed to create the database.';
+     * }
+     *
+     * // This will create a new database named 'new_database' on the server.
      */
     public function newDatabase(string $dbName): bool
     {
@@ -704,8 +803,19 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
+     *
+     * @example
+     * // Example usage:
+     * $tableName = 'users';
+     * if ($this->commonModel->drpPrimaryKey($tableName)) {
+     *     echo 'Primary key dropped successfully.';
+     * } else {
+     *     echo 'Failed to drop the primary key.';
+     * }
+     *
+     * // This will remove the primary key from the 'users' table.
      */
-    public function drpPrimaryKey(string $tableName)
+    public function drpPrimaryKey(string $tableName): bool
     {
         return $this->forge->dropPrimaryKey($tableName);
     }
@@ -721,8 +831,21 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
+     *
+     * @example
+     * // Example usage:
+     * $tableName = 'users';
+     * $keyName = 'my_key_name';
+     * $prefixKeyName = true; // Set to true to prefix the key name with the table name
+     * if ($this->commonModel->drpKey($tableName, $keyName, $prefixKeyName)) {
+     *     echo 'Key dropped successfully.';
+     * } else {
+     *     echo 'Failed to drop the key.';
+     * }
+     *
+     * // This will remove the specified key from the 'users' table.
      */
-    public function drpKey(string $tableName, string $keyName, bool $prefixKeyName = true)
+    public function drpKey(string $tableName, string $keyName, bool $prefixKeyName = true): bool
     {
         return $this->forge->dropKey($tableName, $keyName, $prefixKeyName);
     }
@@ -737,8 +860,20 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
+     *
+     * @example
+     * // Example usage:
+     * $tableName = 'orders';
+     * $foreignKeyName = 'fk_orders_users'; // The name of the foreign key to drop
+     * if ($this->commonModel->drpForeignKey($tableName, $foreignKeyName)) {
+     *     echo 'Foreign key dropped successfully.';
+     * } else {
+     *     echo 'Failed to drop the foreign key.';
+     * }
+     *
+     * // This will remove the specified foreign key from the 'orders' table.
      */
-    public function drpForeignKey(string $tableName,string $foreignKeyName)
+    public function drpForeignKey(string $tableName, string $foreignKeyName)
     {
         return $this->forge->dropForeignKey($tableName, $foreignKeyName);
     }
