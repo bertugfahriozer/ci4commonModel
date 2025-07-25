@@ -4,6 +4,7 @@
 
 ## Features
 
+- Multiple Database Connection Groups
 - **Select records** with flexible conditions (`WHERE`, `OR WHERE`, `LIKE`)
 - **Insert single or multiple records** into the database
 - **Update and delete** records based on conditions
@@ -44,6 +45,9 @@
       - [Drop Primary Key](#drop-primary-key)
       - [Drop Key](#drop-key)
       - [Drop Foreign Key](#drop-foreign-key)
+  - [Troubleshooting: Multiple Database Connection Groups](#troubleshooting-multiple-database-connection-groups)
+    - [Root Cause](#root-cause)
+    - [Solution](#solution)
   - [License](#license)
   - [Author](#author)
 
@@ -251,6 +255,77 @@ $this->commonModel->drpKey('users', 'my_key_name');
 ```php
 $this->commonModel->drpForeignKey('orders', 'fk_orders_users');
 ```
+
+## Troubleshooting: Multiple Database Connection Groups
+
+When working with multiple database connections in CodeIgniter 4, defining them in the `.env` file is not sufficient on its own. Here's an example configuration in `.env`:
+
+```ini
+database.default.hostname=127.0.0.1
+database.default.database=giritliadali
+database.default.username=root
+database.default.password=root
+database.default.DBDriver=MySQLi
+database.default.port=3306
+
+database.secondDB.hostname=127.0.0.1
+database.secondDB.database=giritliadali_bac
+database.secondDB.username=root
+database.secondDB.password=root
+database.secondDB.DBDriver=MySQLi
+database.secondDB.port=3306
+```
+
+Attempting to connect using:
+
+```php
+$this->db = \Config\Database::connect('secondDB');
+```
+
+Will result in the error:
+
+```
+"secondDB" is not a valid database connection group.
+```
+
+### Root Cause
+
+CodeIgniter 4 does not auto-load database groups other than `default` from the `.env` file. You must explicitly define custom groups like `secondDB` in the `app/Config/Database.php` file.
+
+### Solution
+
+To fix this, add a new public array in your `app/Config/Database.php`:
+
+```php
+public array $secondDB = [
+        'DSN'          => '',
+        'hostname'     => 'localhost',
+        'username'     => '',
+        'password'     => '',
+        'database'     => '',
+        'DBDriver'     => 'MySQLi',
+        'DBPrefix'     => '',
+        'pConnect'     => false,
+        'DBDebug'      => true,
+        'charset'      => 'utf8mb4',
+        'DBCollat'     => 'utf8mb4_general_ci',
+        'swapPre'      => '',
+        'encrypt'      => false,
+        'compress'     => false,
+        'strictOn'     => false,
+        'failover'     => [],
+        'port'         => 3306,
+        'numberNative' => false,
+        'foundRows'    => false,
+        'dateFormat'   => [
+            'date'     => 'Y-m-d',
+            'datetime' => 'Y-m-d H:i:s',
+            'time'     => 'H:i:s',
+        ],
+    ];
+```
+
+Once added, `\Config\Database::connect('secondDB')` will work properly.
 
 ## License
 

@@ -372,7 +372,7 @@ class CommonModel
      * @param string $select Columns to select, separated by commas. Defaults to '*' to select all columns.
      * @param array $where Associative array of WHERE conditions.
      *
-     * @return object Returns an object containing the result set.
+     * @return object|null Returns the row object on success or null if no result is found.
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.0.0
@@ -394,7 +394,7 @@ class CommonModel
      *
      * // If no records match the criteria, an empty result object is returned.
      */
-    public function research(string $table, array $like = [], string $select = '*', array $where = []): object
+    public function research(string $table, array $like = [], string $select = '*', array $where = []): mixed
     {
         $builder = $this->db->table($table);
         return $builder->select($select)->where($where)->like($like)->get()->getResult();
@@ -410,7 +410,7 @@ class CommonModel
      * @param array $whereInData An array of values that should be excluded from the results.
      * @param string $orderBy Column and direction by which to order the results, defaults to 'queue ASC'.
      *
-     * @return object Returns an object containing the result set.
+     * @return object|null Returns the row object on success or null if no result is found.
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.1.8
@@ -437,7 +437,7 @@ class CommonModel
      * // This will retrieve orders that are not 'canceled' or 'returned', sorted by order date in descending order.
      * // If no records match the criteria, an empty result object is returned.
      */
-    public function notWhereInList(string $table, string $select = '*', array $joins = [], string $whereInKey = '', array $whereInData = [], string $orderBy = 'queue ASC'): object
+    public function notWhereInList(string $table, string $select = '*', array $joins = [], string $whereInKey = '', array $whereInData = [], string $orderBy = 'queue ASC'): mixed
     {
         $builder = $this->db->table($table)->select($select);
         if (!empty($joins)) {
