@@ -93,8 +93,9 @@ class CommonModel
             }
         }
         $builder->orderBy($order);
-        if ($options['isReset'] == true) return $builder->get()->getRow();
+        if (!empty($options['isReset']) && $options['isReset'] == true) return $builder->get()->getRow();
         if ($limit >= 0 || $pkCount >= 0) $builder->limit($limit, $pkCount);
+        if (!empty($options['isArray']) && $options['isArray'] == true) return $builder->get()->getResultArray();
         return $builder->get()->getResult();
     }
 
