@@ -63,17 +63,25 @@ class CommonModel
      *     echo "No records found.";
      * }
      *
+     * Options parameter `$options` accepts an associative array with the following flags:
+     * - `isReset` (bool): If true, returns a single row object (`getRow()`). Default is false.
+     * - `distinct` (bool): If true, applies `DISTINCT` to the query. Default is false.
+     * - `isArray` (bool): If true, returns the result as an array (`getResultArray()`). Default is false.
+     * - `count` (bool): If true, returns the total number of results (`countAllResults()`). Default is false.
+     *
      * @throws InvalidArgumentException
      * @since 1.0.0
      * @version 1.1.1 Added LIMIT functionality.
      * @version 1.1.4 Added LIKE functionality.
      * @version 1.1.8 Added OR WHERE functionality.
      * @version 1.1.9 Added $options and JOIN functionality.
+     * @version 1.2.1 Added 'distinct' and 'count' functionalities via $options.
      */
     public function lists(string $table, string $select = '*', array $where = [], string $order = 'id ASC', int $limit = 0, int $pkCount = 0, array $like = [], array $orWhere = [], array $joins = [], array $options = ['isReset' => false]): mixed
     {
         $builder = $this->db->table($table);
         $builder->select($select);
+        if (!empty($options['distinct']) && $options['distinct'] == true) $builder->distinct();
         if (!empty($joins)) {
             foreach ($joins as $join) {
                 $builder->join($join['table'], $join['cond'], $join['type']);
@@ -93,8 +101,10 @@ class CommonModel
             }
         }
         $builder->orderBy($order);
-        if ($options['isReset'] == true) return $builder->get()->getRow();
+        if (!empty($options['isReset']) && $options['isReset'] == true) return $builder->get()->getRow();
         if ($limit >= 0 || $pkCount >= 0) $builder->limit($limit, $pkCount);
+        if (!empty($options['isArray']) && $options['isArray'] == true) return $builder->get()->getResultArray();
+        if (!empty($options['count']) && $options['count'] == true) return $builder->countAllResults();
         return $builder->get()->getResult();
     }
 
@@ -128,12 +138,23 @@ class CommonModel
      *
      * @throws InvalidArgumentException
      * @since 1.0.0
+     * @version 1.2.1 Added model:afterCreate event trigger.
      */
     public function create(string $table, array $data = []): int
     {
         $builder = $this->db->table($table);
         $builder->insert($data);
-        return $this->db->insertID();
+        $insertId = $this->db->insertID();
+
+        if ($insertId) {
+            \CodeIgniter\Events\Events::trigger('model:afterCreate', [
+                'table'     => $table,
+                'data'      => $data,
+                'insertId'  => $insertId
+            ]);
+        }
+
+        return $insertId;
     }
 
     /**
@@ -201,11 +222,33 @@ class CommonModel
      *
      * @throws InvalidArgumentException
      * @since 1.0.0
+     * @version 1.2.1 Added model:afterEdit event trigger.
      */
     public function edit(string $table, array $data = [], array $where = []): bool
     {
         $builder = $this->db->table($table);
-        return $builder->where($where)->update($data);
+
+        $oldData = null;
+        try {
+            $oldRecord = $this->selectOne($table, $where);
+            if ($oldRecord) {
+                $oldData = (array) $oldRecord;
+            }
+        } catch (\Throwable $e) {
+        }
+
+        $result = $builder->where($where)->update($data);
+
+        if ($result) {
+            \CodeIgniter\Events\Events::trigger('model:afterEdit', [
+                'table'   => $table,
+                'where'   => $where,
+                'oldData' => $oldData,
+                'newData' => $data
+            ]);
+        }
+
+        return $result;
     }
 
     /**
@@ -235,11 +278,32 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the $where array is empty or invalid.
      * @since 1.0.0
+     * @version 1.2.1 Added model:afterRemove event trigger.
      */
     public function remove(string $table, array $where = []): bool
     {
         $builder = $this->db->table($table);
-        return $builder->where($where)->delete();
+
+        $oldData = null;
+        try {
+            $oldRecord = $this->selectOne($table, $where);
+            if ($oldRecord) {
+                $oldData = (array) $oldRecord;
+            }
+        } catch (\Throwable $e) {
+        }
+
+        $result = $builder->where($where)->delete();
+
+        if ($result) {
+            \CodeIgniter\Events\Events::trigger('model:afterRemove', [
+                'table'   => $table,
+                'where'   => $where,
+                'oldData' => $oldData
+            ]);
+        }
+
+        return $result;
     }
 
     /**
@@ -338,15 +402,21 @@ class CommonModel
      *
      * @param string $table
      * @param array $where
+     * @param array $like Optional. Associative array of LIKE conditions.
+     * @param string $select Optional. Columns to select.
+     * @param bool $distinct Optional. Whether to apply DISTINCT.
      * @return int Returns the count of rows that match the condition
      *
      * @example
      * // Example parameters:
      * $table = 'orders';
      * $where = ['status' => 'completed'];
+     * $like = ['name' => 'John'];
+     * $select = 'id, name';
+     * $distinct = true;
      *
      * // You can use this function like this:
-     * $count = $this->commonModel->count($table, $where);
+     * $count = $this->commonModel->count($table, $where, $like, $select, $distinct);
      *
      * // To display the count of matching records:
      * echo "Number of matching records: " . $count;
@@ -357,10 +427,24 @@ class CommonModel
      *
      * @throws InvalidArgumentException
      * @since 1.0.0
+     * @version 1.2.1 Added $like, $select, and $distinct parameters.
      */
-    public function count(string $table, array $where = []): int
+    public function count(string $table, array $where = [], array $like = [], string $select = '', bool $distinct = false): int
     {
         $builder = $this->db->table($table);
+        if (!empty($select)) $builder->select($select);
+        if ($distinct) $builder->distinct();
+        if (!empty($like)) {
+            if (count($like) === 1) {
+                $builder->like(key($like), reset($like));
+            } else {
+                $builder->groupStart();
+                foreach ($like as $field => $value) {
+                    $builder->orLike($field, $value);
+                }
+                $builder->groupEnd();
+            }
+        }
         return $builder->where($where)->countAllResults();
     }
 
@@ -372,7 +456,7 @@ class CommonModel
      * @param string $select Columns to select, separated by commas. Defaults to '*' to select all columns.
      * @param array $where Associative array of WHERE conditions.
      *
-     * @return object Returns an object containing the result set.
+     * @return object|null Returns the row object on success or null if no result is found.
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.0.0
@@ -394,7 +478,7 @@ class CommonModel
      *
      * // If no records match the criteria, an empty result object is returned.
      */
-    public function research(string $table, array $like = [], string $select = '*', array $where = []): object
+    public function research(string $table, array $like = [], string $select = '*', array $where = []): mixed
     {
         $builder = $this->db->table($table);
         return $builder->select($select)->where($where)->like($like)->get()->getResult();
@@ -410,7 +494,7 @@ class CommonModel
      * @param array $whereInData An array of values that should be excluded from the results.
      * @param string $orderBy Column and direction by which to order the results, defaults to 'queue ASC'.
      *
-     * @return object Returns an object containing the result set.
+     * @return object|null Returns the row object on success or null if no result is found.
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.1.8
@@ -437,7 +521,7 @@ class CommonModel
      * // This will retrieve orders that are not 'canceled' or 'returned', sorted by order date in descending order.
      * // If no records match the criteria, an empty result object is returned.
      */
-    public function notWhereInList(string $table, string $select = '*', array $joins = [], string $whereInKey = '', array $whereInData = [], string $orderBy = 'queue ASC'): object
+    public function notWhereInList(string $table, string $select = '*', array $joins = [], string $whereInKey = '', array $whereInData = [], string $orderBy = 'queue ASC'): mixed
     {
         $builder = $this->db->table($table)->select($select);
         if (!empty($joins)) {
@@ -878,3 +962,4 @@ class CommonModel
         return $this->forge->dropForeignKey($tableName, $foreignKeyName);
     }
 }
+

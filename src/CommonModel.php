@@ -13,7 +13,7 @@
  * @license MIT License (https://opensource.org/license/mit)
  */
 
-namespace ci4commonmodel\Models;
+namespace ci4commonmodel;
 
 class CommonModel
 {
@@ -39,7 +39,8 @@ class CommonModel
      * @param array $options
      * @return array|null|false Returns the result object on success, null if no results, or false on failure.
      *
-     * @example
+     * Example:
+     * ```php
      * // Example parameters:
      * $table= 'users';
      * $select = 'id, name, email, ...';
@@ -63,17 +64,26 @@ class CommonModel
      *     echo "No records found.";
      * }
      *
+     * ```
+     * Options parameter `$options` accepts an associative array with the following flags:
+     * - `isReset` (bool): If true, returns a single row object (`getRow()`). Default is false.
+     * - `distinct` (bool): If true, applies `DISTINCT` to the query. Default is false.
+     * - `isArray` (bool): If true, returns the result as an array (`getResultArray()`). Default is false.
+     * - `count` (bool): If true, returns the total number of results (`countAllResults()`). Default is false.
+     *
      * @throws InvalidArgumentException
      * @since 1.0.0
      * @version 1.1.1 Added LIMIT functionality.
      * @version 1.1.4 Added LIKE functionality.
      * @version 1.1.8 Added OR WHERE functionality.
      * @version 1.1.9 Added $options and JOIN functionality.
+     * @version 1.2.4 Added 'distinct' and 'count' functionalities via $options.
      */
     public function lists(string $table, string $select = '*', array $where = [], string $order = 'id ASC', int $limit = 0, int $pkCount = 0, array $like = [], array $orWhere = [], array $joins = [], array $options = ['isReset' => false]): mixed
     {
         $builder = $this->db->table($table);
         $builder->select($select);
+        if (!empty($options['distinct']) && $options['distinct'] == true) $builder->distinct();
         if (!empty($joins)) {
             foreach ($joins as $join) {
                 $builder->join($join['table'], $join['cond'], $join['type']);
@@ -96,6 +106,7 @@ class CommonModel
         if (!empty($options['isReset']) && $options['isReset'] == true) return $builder->get()->getRow();
         if ($limit >= 0 || $pkCount >= 0) $builder->limit($limit, $pkCount);
         if (!empty($options['isArray']) && $options['isArray'] == true) return $builder->get()->getResultArray();
+        if (!empty($options['count']) && $options['count'] == true) return $builder->countAllResults();
         return $builder->get()->getResult();
     }
 
@@ -109,7 +120,8 @@ class CommonModel
      * @param array $data
      * @return int Returns the ID of the newly inserted record. If the table doesn't have an auto-incremented primary key, it may return 0.
      *
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $table = 'users';
      * $data = [
@@ -127,14 +139,26 @@ class CommonModel
      *     echo "Failed to create user.";
      * }
      *
+     * ```
      * @throws InvalidArgumentException
      * @since 1.0.0
+     * @version 1.2.4 Added model:afterCreate event trigger.
      */
     public function create(string $table, array $data = []): int
     {
         $builder = $this->db->table($table);
         $builder->insert($data);
-        return $this->db->insertID();
+        $insertId = $this->db->insertID();
+
+        if ($insertId) {
+            \CodeIgniter\Events\Events::trigger('model:afterCreate', [
+                'table'     => $table,
+                'data'      => $data,
+                'insertId'  => $insertId
+            ]);
+        }
+
+        return $insertId;
     }
 
     /**
@@ -147,7 +171,8 @@ class CommonModel
      *
      * @return mixed Returns true on success, false on failure, or the number of rows inserted (based on the database driver used).
      *
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $table = 'users';
      * $data = [
@@ -164,6 +189,7 @@ class CommonModel
      *     echo "Failed to insert records.";
      * }
      *
+     * ```
      * @throws InvalidArgumentException If the $data array is empty or invalid.
      * @since 1.1.0
      */
@@ -185,7 +211,8 @@ class CommonModel
      *
      * @return bool Returns true if the update was successful, false otherwise.
      *
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $table = 'users';
      * $data = ['name' => 'John Doe', 'email' => 'john@example.com'];
@@ -200,13 +227,36 @@ class CommonModel
      *     echo "Failed to update record.";
      * }
      *
+     * ```
      * @throws InvalidArgumentException
      * @since 1.0.0
+     * @version 1.2.4 Added model:afterEdit event trigger.
      */
     public function edit(string $table, array $data = [], array $where = []): bool
     {
         $builder = $this->db->table($table);
-        return $builder->where($where)->update($data);
+
+        $oldData = null;
+        try {
+            $oldRecord = $this->selectOne($table, $where);
+            if ($oldRecord) {
+                $oldData = (array) $oldRecord;
+            }
+        } catch (\Throwable $e) {
+        }
+
+        $result = $builder->where($where)->update($data);
+
+        if ($result) {
+            \CodeIgniter\Events\Events::trigger('model:afterEdit', [
+                'table'   => $table,
+                'where'   => $where,
+                'oldData' => $oldData,
+                'newData' => $data
+            ]);
+        }
+
+        return $result;
     }
 
     /**
@@ -220,7 +270,8 @@ class CommonModel
      *
      * @return bool Returns true if the delete operation was successful, false otherwise.
      *
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $table = 'users';
      * $where = ['id' => 1];
@@ -234,13 +285,35 @@ class CommonModel
      *     echo "Failed to delete record.";
      * }
      *
+     * ```
      * @throws InvalidArgumentException If the $where array is empty or invalid.
      * @since 1.0.0
+     * @version 1.2.4 Added model:afterRemove event trigger.
      */
     public function remove(string $table, array $where = []): bool
     {
         $builder = $this->db->table($table);
-        return $builder->where($where)->delete();
+
+        $oldData = null;
+        try {
+            $oldRecord = $this->selectOne($table, $where);
+            if ($oldRecord) {
+                $oldData = (array) $oldRecord;
+            }
+        } catch (\Throwable $e) {
+        }
+
+        $result = $builder->where($where)->delete();
+
+        if ($result) {
+            \CodeIgniter\Events\Events::trigger('model:afterRemove', [
+                'table'   => $table,
+                'where'   => $where,
+                'oldData' => $oldData
+            ]);
+        }
+
+        return $result;
     }
 
     /**
@@ -252,7 +325,8 @@ class CommonModel
      * @return object|null Returns the row object on success or null if no result is found.
      * @version 1.1.2 Added ORDER functionality.
      *
-     * @example
+     * Example:
+     * ```php
      * // Example parameters:
      * $table = 'users';
      * $where = ['id' => 1];
@@ -269,6 +343,7 @@ class CommonModel
      *     echo "No records found.";
      * }
      *
+     * ```
      * @throws InvalidArgumentException
      * @since 1.0.0
      */
@@ -286,7 +361,8 @@ class CommonModel
      * @param array $where
      * @return int Returns the number of rows that match the condition
      *
-     * @example
+     * Example:
+     * ```php
      * // Example parameters:
      * $att = 'status';
      * $table = 'orders';
@@ -298,6 +374,7 @@ class CommonModel
      * // To display the count of matching records:
      * echo "Number of matching records: " . $count;
      *
+     * ```
      * @throws InvalidArgumentException
      * @since 1.0.0
      */
@@ -314,7 +391,8 @@ class CommonModel
      * @param array $where
      * @return int Returns the number of rows that match the condition.
      *
-     * @example
+     * Example:
+     * ```php
      * // Example parameters:
      * $table = 'products';
      * $where = ['category_id' => 10, 'status' => 'active'];
@@ -325,6 +403,7 @@ class CommonModel
      * // To display the count of matching records:
      * echo "Number of matching records: " . $count;
      *
+     * ```
      * @throws InvalidArgumentException
      * @since 1.0.0
      */
@@ -339,15 +418,22 @@ class CommonModel
      *
      * @param string $table
      * @param array $where
+     * @param array $like Optional. Associative array of LIKE conditions.
+     * @param string $select Optional. Columns to select.
+     * @param bool $distinct Optional. Whether to apply DISTINCT.
      * @return int Returns the count of rows that match the condition
      *
-     * @example
+     * Example:
+     * ```php
      * // Example parameters:
      * $table = 'orders';
      * $where = ['status' => 'completed'];
+     * $like = ['name' => 'John'];
+     * $select = 'id, name';
+     * $distinct = true;
      *
      * // You can use this function like this:
-     * $count = $this->commonModel->count($table, $where);
+     * $count = $this->commonModel->count($table, $where, $like, $select, $distinct);
      *
      * // To display the count of matching records:
      * echo "Number of matching records: " . $count;
@@ -356,12 +442,27 @@ class CommonModel
      * $countAll = $this->commonModel->count($table);
      * echo "Total number of records: " . $countAll;
      *
+     * ```
      * @throws InvalidArgumentException
      * @since 1.0.0
+     * @version 1.2.4 Added $like, $select, and $distinct parameters.
      */
-    public function count(string $table, array $where = []): int
+    public function count(string $table, array $where = [], array $like = [], string $select = '', bool $distinct = false): int
     {
         $builder = $this->db->table($table);
+        if (!empty($select)) $builder->select($select);
+        if ($distinct) $builder->distinct();
+        if (!empty($like)) {
+            if (count($like) === 1) {
+                $builder->like(key($like), reset($like));
+            } else {
+                $builder->groupStart();
+                foreach ($like as $field => $value) {
+                    $builder->orLike($field, $value);
+                }
+                $builder->groupEnd();
+            }
+        }
         return $builder->where($where)->countAllResults();
     }
 
@@ -378,7 +479,8 @@ class CommonModel
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.0.0
      *
-     * @example
+     * Example:
+     * ```php
      * // Example parameters:
      * $table = 'products';
      * $like = ['name' => 'Gadget']; // Search for 'Gadget' in the 'name' column
@@ -394,6 +496,7 @@ class CommonModel
      * }
      *
      * // If no records match the criteria, an empty result object is returned.
+     * ```
      */
     public function research(string $table, array $like = [], string $select = '*', array $where = []): mixed
     {
@@ -416,7 +519,8 @@ class CommonModel
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.1.8
      *
-     * @example
+     * Example:
+     * ```php
      * // Example parameters:
      * $table = 'orders';
      * $select = 'id, customer_name, order_date';
@@ -437,6 +541,7 @@ class CommonModel
      *
      * // This will retrieve orders that are not 'canceled' or 'returned', sorted by order date in descending order.
      * // If no records match the criteria, an empty result object is returned.
+     * ```
      */
     public function notWhereInList(string $table, string $select = '*', array $joins = [], string $whereInKey = '', array $whereInData = [], string $orderBy = 'queue ASC'): mixed
     {
@@ -456,7 +561,8 @@ class CommonModel
      * @return array Returns an array of table names.
      *
      * @since 1.2.0
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $tables = $this->commonModel->getTableList();
      *
@@ -465,6 +571,7 @@ class CommonModel
      * }
      *
      * // This will print the names of all tables in the database.
+     * ```
      */
     public function getTableList()
     {
@@ -483,7 +590,8 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
-     * @example
+     * Example:
+     * ```php
      * //Example usage:
      *  $table = 'new_table';
      *  $fields = [
@@ -527,6 +635,7 @@ class CommonModel
      *  }
      *
      *  // This will create a new table named 'new_table' with the specified fields and options.
+     * ```
      */
     public function newTable(string $table, array $fields, array $addKeys = [
         'keys' => [],
@@ -564,7 +673,8 @@ class CommonModel
      * @throws InvalidArgumentException If the table name is invalid or not provided.
      * @since 1.2.0
      *
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $table = 'old_table';
      *
@@ -575,6 +685,7 @@ class CommonModel
      * }
      *
      * // This will delete the 'old_table' from the database.
+     * ```
      */
     public function removeTable($table): bool
     {
@@ -591,7 +702,8 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $table = 'users';
      * $fields = [
@@ -604,6 +716,7 @@ class CommonModel
      * }
      *
      * // This will add a new column named 'preferences' of type TEXT to the 'users' table, after the 'another_field' column.
+     * ```
      */
     public function addColumnToTable(string $table, array $fields): bool
     {
@@ -620,13 +733,15 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $table = 'users';
      * $fields = ['preferences', 'another_field'];
      * $isDropped = $this->commonModel->removeColumnFromTable($table, $fields);
      *
      * // This will remove the 'preferences' and 'another_field' columns from the 'users' table.
+     * ```
      */
     public function removeColumnFromTable(string $table, array $fields)
     {
@@ -643,7 +758,8 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $oldName = 'old_table_name';
      * $newName = 'new_table_name';
@@ -654,6 +770,7 @@ class CommonModel
      * }
      *
      * // This will rename the table from 'old_table_name' to 'new_table_name'.
+     * ```
      */
     public function updateTableName(string $oldName, string $newName): bool
     {
@@ -670,7 +787,8 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $table = 'users';
      * $fields = [
@@ -683,6 +801,7 @@ class CommonModel
      * $isModified = $this->commonModel->modifyColumnInfos($table, $fields);
      *
      * // This will change the 'old_name' column to 'new_name' with type TEXT and not null in the 'users' table.
+     * ```
      */
     public function modifyColumnInfos(string $table, array $fields): mixed
     {
@@ -699,7 +818,8 @@ class CommonModel
      * @throws InvalidArgumentException If the table name is invalid or not provided.
      * @since 1.1.9
      *
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $table = 'users';
      *
@@ -710,6 +830,7 @@ class CommonModel
      * }
      *
      * // This will remove all rows from the 'users' table without deleting the table itself.
+     * ```
      */
     public function emptyTableDatas(string $table): bool
     {
@@ -726,7 +847,8 @@ class CommonModel
      * @throws InvalidArgumentException If the table name is invalid or not provided.
      * @since 1.2.0
      *
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $tableName = 'users';
      *
@@ -737,6 +859,7 @@ class CommonModel
      * }
      *
      * // This will print the names and types of all fields in the 'users' table.
+     * ```
      */
     public function getTableFields($tableName)
     {
@@ -752,7 +875,8 @@ class CommonModel
      *
      * @throws InvalidArgumentException If the database name is invalid or not provided.
      * @since 1.2.0
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $dbName = 'new_database';
      * if ($this->commonModel->newDatabase($dbName)) {
@@ -762,6 +886,7 @@ class CommonModel
      * }
      *
      * // This will create a new database named 'new_database' on the server.
+     * ```
      */
     public function newDatabase(string $dbName): bool
     {
@@ -778,7 +903,8 @@ class CommonModel
      * @throws InvalidArgumentException If the database name is invalid or not provided.
      * @since 1.2.0
      *
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $dbName = 'old_database';
      *
@@ -789,6 +915,7 @@ class CommonModel
      * }
      *
      * // This will delete the 'old_database' from the server.
+     * ```
      */
     public function removeDatabase(string $dbName): bool
     {
@@ -805,7 +932,8 @@ class CommonModel
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
      *
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $tableName = 'users';
      * if ($this->commonModel->drpPrimaryKey($tableName)) {
@@ -815,6 +943,7 @@ class CommonModel
      * }
      *
      * // This will remove the primary key from the 'users' table.
+     * ```
      */
     public function drpPrimaryKey(string $tableName): bool
     {
@@ -833,7 +962,8 @@ class CommonModel
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
      *
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $tableName = 'users';
      * $keyName = 'my_key_name';
@@ -845,6 +975,7 @@ class CommonModel
      * }
      *
      * // This will remove the specified key from the 'users' table.
+     * ```
      */
     public function drpKey(string $tableName, string $keyName, bool $prefixKeyName = true): bool
     {
@@ -862,7 +993,8 @@ class CommonModel
      * @throws InvalidArgumentException If the parameters are invalid.
      * @since 1.2.0
      *
-     * @example
+     * Example:
+     * ```php
      * // Example usage:
      * $tableName = 'orders';
      * $foreignKeyName = 'fk_orders_users'; // The name of the foreign key to drop
@@ -873,6 +1005,7 @@ class CommonModel
      * }
      *
      * // This will remove the specified foreign key from the 'orders' table.
+     * ```
      */
     public function drpForeignKey(string $tableName, string $foreignKeyName)
     {

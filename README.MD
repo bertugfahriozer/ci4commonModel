@@ -56,31 +56,36 @@
 To use `CommonModel` in your CodeIgniter 4 project, follow these steps:
 
 1. Install with Composer:
-    ```bash
-    composer require bertugfahriozer/ci4commonmodel
-    ```
+
+   ```bash
+   composer require bertugfahriozer/ci4commonmodel
+   ```
 
 2. Load the model in your controller:
-    ```php
-    use ci4commonmodel\Models\CommonModel;
 
-    class ExampleController extends BaseController
-    {
-        protected $commonModel;
+   ```php
 
-        public function __construct()
-        {
-            $this->commonModel = new CommonModel();
-        }
-    }
-    ```
+   use ci4commonmodel\CommonModel;
+
+   class ExampleController extends BaseController
+   {
+       protected $commonModel;
+
+       public function __construct()
+       {
+           $this->commonModel = new CommonModel();
+       }
+   }
+   ```
 
 ## Usage
 
 ### 1. Retrieving Records (`lists`)
+
 Fetch records from a database table with flexible filters such as `WHERE`, `OR WHERE`, `LIKE`, `JOIN`, and ordering. Supports limit and pagination.
 
 ```php
+
 // Simple usage
 $users = $this->commonModel->lists('users', '*', ['status' => 1], 'id DESC', 10);
 
@@ -92,10 +97,13 @@ $like = ['name' => 'John'];
 $users = $this->commonModel->lists('users', 'users.*, roles.name as role', ['status' => 1], 'users.id DESC', 10, 0, $like, [], $joins);
 ```
 
+
 ### 2. Inserting Records (`create`)
+
 Insert a single record into the database and return the newly inserted ID.
 
 ```php
+
 $data = [
     'name' => 'John Doe',
     'email' => 'john@example.com',
@@ -105,10 +113,13 @@ $data = [
 $insertId = $this->commonModel->create('users', $data);
 ```
 
+
 ### 3. Batch Insert (`createMany`)
+
 Insert multiple records at once.
 
 ```php
+
 $data = [
     ['name' => 'Alice', 'email' => 'alice@example.com'],
     ['name' => 'Bob', 'email' => 'bob@example.com']
@@ -117,59 +128,84 @@ $data = [
 $this->commonModel->createMany('users', $data);
 ```
 
+
 ### 4. Updating Records (`edit`)
+
 Update existing records by specifying the WHERE conditions and the new data.
 
 ```php
+
 $data = ['status' => 2];
 $where = ['id' => 1];
 
 $this->commonModel->edit('users', $data, $where);
 ```
 
+
 ### 5. Deleting Records (`remove`)
+
 Delete records from a table based on WHERE conditions.
 
 ```php
+
 $where = ['id' => 1];
 $this->commonModel->remove('users', $where);
 ```
 
+
 ### 6. Count Records (`count`)
+
 Count the number of records that match a given condition.
 
 ```php
+
 $where = ['status' => 1];
 $count = $this->commonModel->count('users', $where);
 ```
 
+
 ### 7. Check Record Existence (`isHave`)
+
 Check whether a record exists in a table with a specified condition.
 
 ```php
+
 $where = ['id' => 1];
 $isExist = $this->commonModel->isHave('users', $where);
 ```
 
+
 ### 8. Complex Queries (`research`)
+
 Search records using LIKE queries and filtering by conditions.
 
 ```php
+
 $like = ['name' => 'John'];
 $where = ['status' => 1];
 
 $results = $this->commonModel->research('users', $like, '*', $where);
 ```
 
+
 ### 9. Table and Database Management
 
-#### Get Table List
+####  Get Table List
+
+
+
 ```php
+
 $tables = $this->commonModel->getTableList();
 ```
 
-#### Create a New Table
+
+####  Create a New Table
+
+
+
 ```php
+
 $fields = [
     'id' => [
         'type' => 'INT',
@@ -186,31 +222,56 @@ $fields = [
 $this->commonModel->newTable('blog', $fields);
 ```
 
-#### Remove a Table
+
+####  Remove a Table
+
+
+
 ```php
+
 $this->commonModel->removeTable('blog');
 ```
 
-#### Add Column to Table
+
+####  Add Column to Table
+
+
+
 ```php
+
 $fields = [
     'preferences' => ['type' => 'TEXT', 'after' => 'email'],
 ];
 $this->commonModel->addColumnToTable('users', $fields);
 ```
 
-#### Remove Column from Table
+
+####  Remove Column from Table
+
+
+
 ```php
+
 $this->commonModel->removeColumnFromTable('users', ['preferences']);
 ```
 
-#### Rename Table
+
+####  Rename Table
+
+
+
 ```php
+
 $this->commonModel->updateTableName('old_table', 'new_table');
 ```
 
-#### Modify Column Info
+
+####  Modify Column Info
+
+
+
 ```php
+
 $fields = [
     'old_name' => [
         'name' => 'new_name',
@@ -221,40 +282,76 @@ $fields = [
 $this->commonModel->modifyColumnInfos('users', $fields);
 ```
 
-#### Truncate Table
+
+####  Truncate Table
+
+
+
 ```php
+
 $this->commonModel->emptyTableDatas('users');
 ```
 
-#### Get Table Fields
+
+####  Get Table Fields
+
+
+
 ```php
+
 $fields = $this->commonModel->getTableFields('users');
 ```
 
-#### Create a New Database
+
+####  Create a New Database
+
+
+
 ```php
+
 $this->commonModel->newDatabase('new_db');
 ```
 
-#### Remove a Database
+
+####  Remove a Database
+
+
+
 ```php
+
 $this->commonModel->removeDatabase('old_db');
 ```
 
-#### Drop Primary Key
+
+####  Drop Primary Key
+
+
+
 ```php
+
 $this->commonModel->drpPrimaryKey('users');
 ```
 
-#### Drop Key
+
+####  Drop Key
+
+
+
 ```php
+
 $this->commonModel->drpKey('users', 'my_key_name');
 ```
 
-#### Drop Foreign Key
+
+####  Drop Foreign Key
+
+
+
 ```php
+
 $this->commonModel->drpForeignKey('orders', 'fk_orders_users');
 ```
+
 
 ## Troubleshooting: Multiple Database Connection Groups
 
@@ -276,17 +373,22 @@ database.secondDB.DBDriver=MySQLi
 database.secondDB.port=3306
 ```
 
+
 Attempting to connect using:
 
 ```php
+
 $this->db = \Config\Database::connect('secondDB');
 ```
+
 
 Will result in the error:
 
 ```
+
 "secondDB" is not a valid database connection group.
 ```
+
 
 ### Root Cause
 
@@ -297,6 +399,7 @@ CodeIgniter 4 does not auto-load database groups other than `default` from the `
 To fix this, add a new public array in your `app/Config/Database.php`:
 
 ```php
+
 public array $secondDB = [
         'DSN'          => '',
         'hostname'     => 'localhost',
@@ -324,6 +427,7 @@ public array $secondDB = [
         ],
     ];
 ```
+
 
 Once added, `\Config\Database::connect('secondDB')` will work properly.
 

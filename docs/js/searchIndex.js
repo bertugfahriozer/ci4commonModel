@@ -1,160 +1,155 @@
 Search.appendIndex(
     [
                 {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel",
+            "fqsen": "\\ci4commonmodel\\CommonModel",
             "name": "CommonModel",
             "summary": "",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html"
+            "url": "classes/ci4commonmodel-CommonModel.html"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method___construct"
+            "url": "classes/ci4commonmodel-CommonModel.html#method___construct"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003Alists\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003Alists\u0028\u0029",
             "name": "lists",
             "summary": "",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_lists"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_lists"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003Acreate\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003Acreate\u0028\u0029",
             "name": "create",
             "summary": "Inserts\u0020a\u0020new\u0020record\u0020into\u0020the\u0020specified\u0020table\u0020and\u0020returns\u0020the\u0020insert\u0020ID.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_create"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_create"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AcreateMany\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AcreateMany\u0028\u0029",
             "name": "createMany",
             "summary": "Inserts\u0020multiple\u0020records\u0020into\u0020the\u0020specified\u0020table.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_createMany"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_createMany"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003Aedit\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003Aedit\u0028\u0029",
             "name": "edit",
             "summary": "Updates\u0020records\u0020in\u0020the\u0020specified\u0020table\u0020based\u0020on\u0020the\u0020given\u0020conditions.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_edit"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_edit"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003Aremove\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003Aremove\u0028\u0029",
             "name": "remove",
             "summary": "Deletes\u0020records\u0020from\u0020the\u0020specified\u0020table\u0020based\u0020on\u0020the\u0020given\u0020conditions.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_remove"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_remove"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AselectOne\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AselectOne\u0028\u0029",
             "name": "selectOne",
             "summary": "Selects\u0020a\u0020single\u0020record\u0020from\u0020the\u0020database\u0020based\u0020on\u0020conditions.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_selectOne"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_selectOne"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AwhereInCheckData\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AwhereInCheckData\u0028\u0029",
             "name": "whereInCheckData",
             "summary": "Checks\u0020if\u0020there\u0020are\u0020records\u0020in\u0020the\u0020table\u0020where\u0020a\u0020specified\u0020column\u0027s\u0020value\u0020matches\u0020any\u0020of\u0020the\u0020provided\u0020values.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_whereInCheckData"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_whereInCheckData"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AisHave\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AisHave\u0028\u0029",
             "name": "isHave",
             "summary": "Checks\u0020if\u0020there\u0020are\u0020any\u0020records\u0020in\u0020the\u0020specified\u0020table\u0020that\u0020match\u0020the\u0020given\u0020conditions.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_isHave"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_isHave"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003Acount\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003Acount\u0028\u0029",
             "name": "count",
             "summary": "Counts\u0020the\u0020number\u0020of\u0020records\u0020in\u0020the\u0020specified\u0020table\u0020that\u0020match\u0020the\u0020given\u0020conditions.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_count"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_count"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003Aresearch\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003Aresearch\u0028\u0029",
             "name": "research",
             "summary": "Retrieves\u0020records\u0020from\u0020the\u0020specified\u0020table\u0020that\u0020match\u0020the\u0020given\u0020conditions\u0020and\u0020like\u0020patterns.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_research"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_research"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AnotWhereInList\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AnotWhereInList\u0028\u0029",
             "name": "notWhereInList",
             "summary": "Retrieves\u0020records\u0020from\u0020the\u0020specified\u0020table,\u0020excluding\u0020those\u0020where\u0020the\u0020given\u0020key\u0020matches\u0020any\u0020value\u0020in\u0020the\u0020specified\u0020array,\u0020with\u0020optional\u0020joins\u0020and\u0020sorting.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_notWhereInList"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_notWhereInList"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AgetTableList\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AgetTableList\u0028\u0029",
             "name": "getTableList",
             "summary": "Retrieves\u0020the\u0020list\u0020of\u0020tables\u0020in\u0020the\u0020database.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_getTableList"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_getTableList"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AnewTable\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AnewTable\u0028\u0029",
             "name": "newTable",
             "summary": "Creates\u0020a\u0020new\u0020table\u0020in\u0020the\u0020database\u0020with\u0020the\u0020specified\u0020fields\u0020and\u0020options.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_newTable"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_newTable"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AremoveTable\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AremoveTable\u0028\u0029",
             "name": "removeTable",
             "summary": "Removes\u0020the\u0020specified\u0020table\u0020from\u0020the\u0020database.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_removeTable"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_removeTable"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AaddColumnToTable\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AaddColumnToTable\u0028\u0029",
             "name": "addColumnToTable",
             "summary": "Adds\u0020a\u0020new\u0020column\u0020to\u0020the\u0020specified\u0020table.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_addColumnToTable"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_addColumnToTable"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AremoveColumnFromTable\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AremoveColumnFromTable\u0028\u0029",
             "name": "removeColumnFromTable",
             "summary": "Removes\u0020the\u0020specified\u0020columns\u0020from\u0020the\u0020table.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_removeColumnFromTable"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_removeColumnFromTable"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AupdateTableName\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AupdateTableName\u0028\u0029",
             "name": "updateTableName",
             "summary": "Updates\u0020the\u0020name\u0020of\u0020the\u0020specified\u0020table.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_updateTableName"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_updateTableName"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AmodifyColumnInfos\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AmodifyColumnInfos\u0028\u0029",
             "name": "modifyColumnInfos",
             "summary": "Modifies\u0020the\u0020column\u0020information\u0020of\u0020the\u0020specified\u0020table.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_modifyColumnInfos"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_modifyColumnInfos"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AemptyTableDatas\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AemptyTableDatas\u0028\u0029",
             "name": "emptyTableDatas",
             "summary": "Truncates\u0020the\u0020specified\u0020table,\u0020removing\u0020all\u0020records\u0020while\u0020keeping\u0020the\u0020table\u0020structure\u0020intact.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_emptyTableDatas"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_emptyTableDatas"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AgetTableFields\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AgetTableFields\u0028\u0029",
             "name": "getTableFields",
             "summary": "Retrieves\u0020the\u0020fields\u0020of\u0020the\u0020specified\u0020table.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_getTableFields"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_getTableFields"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AnewDatabase\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AnewDatabase\u0028\u0029",
             "name": "newDatabase",
             "summary": "Creates\u0020a\u0020new\u0020database\u0020with\u0020the\u0020specified\u0020name.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_newDatabase"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_newDatabase"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AremoveDatabase\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AremoveDatabase\u0028\u0029",
             "name": "removeDatabase",
             "summary": "Removes\u0020the\u0020specified\u0020database.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_removeDatabase"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_removeDatabase"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AdrpPrimaryKey\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AdrpPrimaryKey\u0028\u0029",
             "name": "drpPrimaryKey",
             "summary": "Drop\u0020a\u0020primary\u0020key\u0020to\u0020the\u0020specified\u0020table.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_drpPrimaryKey"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_drpPrimaryKey"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AdrpKey\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AdrpKey\u0028\u0029",
             "name": "drpKey",
             "summary": "Drop\u0020a\u0020key\u0020to\u0020the\u0020specified\u0020table.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_drpKey"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_drpKey"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003AdrpForeignKey\u0028\u0029",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003AdrpForeignKey\u0028\u0029",
             "name": "drpForeignKey",
             "summary": "Drop\u0020a\u0020foreign\u0020key\u0020to\u0020the\u0020specified\u0020table.",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#method_drpForeignKey"
+            "url": "classes/ci4commonmodel-CommonModel.html#method_drpForeignKey"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003A\u0024db",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003A\u0024db",
             "name": "db",
             "summary": "",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#property_db"
+            "url": "classes/ci4commonmodel-CommonModel.html#property_db"
         },                {
-            "fqsen": "\\ci4commonmodel\\Models\\CommonModel\u003A\u003A\u0024forge",
+            "fqsen": "\\ci4commonmodel\\CommonModel\u003A\u003A\u0024forge",
             "name": "forge",
             "summary": "",
-            "url": "classes/ci4commonmodel-Models-CommonModel.html#property_forge"
+            "url": "classes/ci4commonmodel-CommonModel.html#property_forge"
         },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
             "url": "namespaces/default.html"
-        },                {
-            "fqsen": "\\ci4commonmodel\\Models",
-            "name": "Models",
-            "summary": "",
-            "url": "namespaces/ci4commonmodel-models.html"
         },                {
             "fqsen": "\\ci4commonmodel",
             "name": "ci4commonmodel",
