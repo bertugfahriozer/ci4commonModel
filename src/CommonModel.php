@@ -29,14 +29,15 @@ class CommonModel
     /**
      * @param string $table // table name
      * @param string $select // Coluns to select
-     * @param array $where // Where conditions
-     * @param string $order // Sorting criteria
-     * @param int $limit // Limit on the number of results
-     * @param int $pkCount // Primary key count
-     * @param array $like // Like conditions
-     * @param array $orWhere // Or conditions
-     * @param array $joins // Join operations
-     * @param array $options
+     * @param array $where // Where conditions ['key'=>'value','key2'=> 'value2']
+     * @param string $order // Sorting criteria ['key DESC/ASC']
+     * @param int $limit // Limit on the number of results (0 = no limit)
+     * @param int $pkCount // Primary key count (0 = no limit)
+     * @param array $like // Like conditions ['key'=>'value','key2'=> 'value2']
+     * @param array $orWhere // Or conditions ['key'=>'value','key2'=> 'value2']
+     * @param array $joins // Join operations ['table'=>'table_name','cond'=>'condition','type'=>'join_type']
+     * @param array $options ['isReset' => false, 'distinct' => false, 'isArray' => false, 'count' => false]
+     * @param array $whereIn // Where in conditions ['key'=>'column_name','where'=>['value1','value2','value3']]
      * @return array|null|false Returns the result object on success, null if no results, or false on failure.
      *
      * Example:
@@ -51,9 +52,10 @@ class CommonModel
      * $like = ['name' => 'John', ...];
      * $orWhere = ['role' => 'admin', ...];
      * $joins = [['table' => 'roles', 'cond' => 'users.role_id = roles.id', 'type' => 'left'], ...];
+     * $whereIn = ['key'=>'username','where'=> $names];
      *
      * // You can use this function in a Controller or Library like this:
-     * $result=$this->commonModel->lists($table, $select, $where, $order, $limit, $pkCount, $like, $orWhere, $joins);
+     * $result=$this->commonModel->lists($table, $select, $where, $order, $limit, $pkCount, $like, $orWhere, $joins, [],$whereIn);
      * // Once the results are returned, you can process the data using a foreach loop:
      * foreach ($result as $row) {
      *     echo $row->name . ' - ' . $row->email;
@@ -78,8 +80,9 @@ class CommonModel
      * @version 1.1.8 Added OR WHERE functionality.
      * @version 1.1.9 Added $options and JOIN functionality.
      * @version 1.2.4 Added 'distinct' and 'count' functionalities via $options.
+     * @version 1.2.5 Added WHERE IN functionality.
      */
-    public function lists(string $table, string $select = '*', array $where = [], string $order = 'id ASC', int $limit = 0, int $pkCount = 0, array $like = [], array $orWhere = [], array $joins = [], array $options = ['isReset' => false]): mixed
+    public function lists(string $table, string $select = '*', array $where = [], string $order = 'id ASC', int $limit = 0, int $pkCount = 0, array $like = [], array $orWhere = [], array $joins = [], array $options = ['isReset' => false],array $whereIn=[]): mixed
     {
         $builder = $this->db->table($table);
         $builder->select($select);
@@ -89,6 +92,7 @@ class CommonModel
                 $builder->join($join['table'], $join['cond'], $join['type']);
             }
         }
+        if (!empty($whereIn)) $builder->whereIn($whereIn['key'], $whereIn['where']);
         $builder->where($where);
         if ($orWhere) $builder->orWhere($orWhere);
         if (!empty($like)) {
